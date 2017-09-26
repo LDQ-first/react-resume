@@ -22,6 +22,8 @@ const HeaderDiv = styled.div`
         height: 100vh;
         width: 100%;
         z-index: -200;
+        display: flex;
+        justify-content: center;
         .imglist {
             animation: even 20s linear infinite alternate;
             opacity: 0;
