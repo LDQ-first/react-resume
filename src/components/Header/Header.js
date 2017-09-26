@@ -30,8 +30,8 @@ export default class Header extends Component {
 
      componentDidMount() {
          const {_this} = this.props
-         console.log(this._header)
-         console.log(this._header.offsetTop)
+/*         console.log(this._header)
+         console.log(this._header.offsetTop)*/
          _this._setTopData(0, this._header.offsetTop)
     }
 

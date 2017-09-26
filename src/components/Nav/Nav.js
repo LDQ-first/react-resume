@@ -15,16 +15,12 @@ export default class Nav extends Component {
     
     componentWillMount() {
         if(document.body.scrollTop > document.body.clientHeight - 400) {
-            console.log('fixed')
             this.setState({
                 fixed: true
             })
         }
         window.addEventListener('scroll', () => {
-            console.log(document.body.scrollTop)
-            console.log(document.body.clientHeight)
              if(document.body.scrollTop > document.body.clientHeight - 400) {
-                console.log('fixed')
                 this.setState({
                     fixed: true
                 })

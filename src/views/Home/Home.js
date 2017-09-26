@@ -59,8 +59,7 @@ class Home extends Component {
                 b.scrollTop +=  top * 0.2
             }
         }, 1000 / 60)
-       /* b.scrollTop = top*/
-        console.log(document.body.scrollTop)
+        /*console.log(document.body.scrollTop)*/
     }
     
     
@@ -75,28 +74,19 @@ class Home extends Component {
 
 
     
-   /* componentDidUpdate(prevProps, prevState) {
-        const {scroll, activeIndex}  = prevProps
-        console.log('did')
-        console.log(scroll)
-        console.log(activeIndex)
-        console.log(document.body.scrollTop)
-
-    }*/
-    
     
 
     render() {
 
        const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
        const { isFixed } = this.state
-       if(scroll ) {
+       /*if(scroll ) {
            console.log(scroll)
        }
        
        if(activeIndex) {
             console.log(activeIndex)
-        }
+        }*/
         
         return (
             <HomeDiv>
