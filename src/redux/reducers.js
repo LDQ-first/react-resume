@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux-immutable'
-import nav from './reducer/nav'
-
+import home from './reducer/home.js'
 import { LOCATION_CHANGE } from 'react-router-redux'
 import { fromJS } from 'immutable'
 
@@ -25,7 +24,7 @@ const routeReducer = (state = routeInitialState, action) => {
 export default combineReducers({
     route: routeReducer,
     global: combineReducers({
-      nav
+      home
     })
 })
 

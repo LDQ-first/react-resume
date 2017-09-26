@@ -15,11 +15,11 @@ export const scrollSelector = createSelector(
     }
 )
 
-export const activeNavIndexSelector = createSelector(
+export const activeIndexSelector = createSelector(
     homeSelector,
     homeState => {
         if(!homeState) return
-        return homeState.get('activeNavIndex')
+        return homeState.get('activeIndex')
     }
 )
 

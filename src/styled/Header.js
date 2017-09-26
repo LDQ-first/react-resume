@@ -2,12 +2,8 @@ import styled from 'styled-components'
 
 const HeaderDiv = styled.div`
     position: relative;
-    overflow: hidden;
-    min-height: 100vh;
-    color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;  
+    color: #FFF; 
     ::before {
         content: '';
         position: absolute;
@@ -16,6 +12,14 @@ const HeaderDiv = styled.div`
         background: rgba(0, 0, 0, 0.4);
         background: linear-gradient(135deg, rgba(0, 116, 247, 0.4), rgba(0, 255, 184, 0.3));
         z-index: -10;
+    }
+    .headerWrap {
+         position: relative;
+         width: 100vw;
+         min-height: 100vh;
+         display: flex;
+        justify-content: center;
+        align-items: center;
     }
    .bgImg-list {
         position: absolute;

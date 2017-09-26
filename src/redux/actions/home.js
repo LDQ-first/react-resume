@@ -12,7 +12,7 @@ export const chooseNav = (index) => {
     }
 }
 
-export const chooseNavIndex = (index) => {
+export const chooseNavIndex = (index) => (dispatch) => {
     dispatch(chooseNav(index))
     /*switch(index) {
         case '0':
@@ -32,8 +32,8 @@ export const setTop = (index, top) => {
     }
 }
 
-export const setTopData = (index, top) => {
+export const setTopData = (index, top) => (dispatch) => {
      
-     dispatch(chooseNav(index, top))
+     dispatch(setTop(index, top))
 }
 

@@ -4,6 +4,31 @@ const NavDiv = styled.div`
    position: absolute;
    top: 0;
    width: 100vw;
+   &.fixed {
+       position: fixed;
+       top: 0;
+       background: #FFF;
+       .logo {
+            color: #2196F3;
+            .name {
+                
+            }
+            .cv {
+
+            }
+        }
+       .navContent {
+           .navs {
+               .nav {
+                    color: rgba(0, 0, 0, 0.5);
+                    &.active {
+                        color: #2196F3;
+                    }
+                }
+           }
+       }
+       
+   }
    .navContent {
        max-width: 900px;
        margin: 0 auto;
@@ -11,6 +36,7 @@ const NavDiv = styled.div`
        justify-content: space-between;
        padding: 8px 1em;
        .logo {
+            padding: 4px 1em;
             font-size: 18px;
             .name {
                 font-family: Lobster,cursive;

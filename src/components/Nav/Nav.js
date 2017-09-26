@@ -6,9 +6,36 @@ import classNames from 'classnames'
 export default class Nav extends Component {
     static get propTypes() {
         return {
-           
+           _this: PropTypes.object,
+           activeIndex: PropTypes.number,
         }
     }
+
+
+    
+    componentWillMount() {
+        if(document.body.scrollTop > document.body.clientHeight - 400) {
+            console.log('fixed')
+            this.setState({
+                fixed: true
+            })
+        }
+        window.addEventListener('scroll', () => {
+            console.log(document.body.scrollTop)
+            console.log(document.body.clientHeight)
+             if(document.body.scrollTop > document.body.clientHeight - 400) {
+                console.log('fixed')
+                this.setState({
+                    fixed: true
+                })
+            } else {
+                this.setState({
+                    fixed: false
+                })
+            }
+        })
+    }
+    
 
     constructor (props) {
         super(props)
@@ -33,18 +60,21 @@ export default class Nav extends Component {
                     name: '联系方式'
                 },
             ],
-            activeIndex: 0,
+             fixed: false
         }
     }
 
     render() {
-
-        const { navArr, activeIndex } = this.state
+        const { _this, activeIndex } = this.props
+        const { navArr, fixed } = this.state
+        /*if(activeIndex) {
+            console.log(activeIndex)
+        }*/
 
         const navs = navArr.map((item, index) => {
             return (
                 <li key={index} className={classNames('nav', {active: activeIndex === index})}
-                onClick={() => {}}>
+                onClick={() => {_this._chooseNav(index)}}>
                     {item.name}
                 </li>
             )
@@ -55,7 +85,7 @@ export default class Nav extends Component {
 
        
         return (
-            <NavDiv>
+            <NavDiv className={classNames({fixed})} >
                <div className="navContent">
                     <div className="logo">
                             <span className="name">刘德铨 </span> 

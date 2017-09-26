@@ -7,7 +7,8 @@ import classNames from 'classnames'
 export default class Header extends Component {
     static get propTypes() {
         return {
-           
+           _this: PropTypes.object,
+           activeIndex: PropTypes.number,
         }
     }
 
@@ -24,6 +25,14 @@ export default class Header extends Component {
                 imgIndex: i
             })
         }, 10000)
+    }
+
+
+     componentDidMount() {
+         const {_this} = this.props
+         console.log(this._header)
+         console.log(this._header.offsetTop)
+         _this._setTopData(0, this._header.offsetTop)
     }
 
     constructor (props) {
@@ -53,6 +62,7 @@ export default class Header extends Component {
 
     render() {
 
+        const {_this, activeIndex} = this.props
         const {imglists, imgIndex} = this.state
 
         const Imglists = imglists.map((imglist, index) => {
@@ -61,22 +71,24 @@ export default class Header extends Component {
             )
         })
         
-
+       
         
 
 
        
         return (
             <HeaderDiv>
-                <div className="bgImg-list">
-                    {Imglists}
-                </div>
-                <Navs />
-                <div className="headerContent">
-                    <h1 className="title">
-                       你好！我是 <span className="name">刘德铨</span>
-                    </h1>
-                    <h2 className="job">求职：前端工程师</h2>
+                <div className="headerWrap" ref={header => this._header = header}>
+                    <div className="bgImg-list">
+                        {Imglists}
+                    </div>
+                    <Navs _this={_this} activeIndex={activeIndex} />
+                    <div className="headerContent">
+                        <h1 className="title">
+                        你好！我是 <span className="name">刘德铨</span>
+                        </h1>
+                        <h2 className="job">求职：前端工程师</h2>
+                    </div>
                 </div>
             </HeaderDiv>
         )
