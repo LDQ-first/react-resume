@@ -6,11 +6,12 @@ export default class Loading extends Component {
         return (
             <LoadingDiv> 
                 <div className="loading">
+                    {/*<span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span>*/}
+                    <div className="loader"></div>
                 </div>
             </LoadingDiv>
         )
