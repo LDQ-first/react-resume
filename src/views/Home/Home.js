@@ -18,7 +18,9 @@ class Home extends Component {
         
         return (
             <HomeDiv>
-                home
+                <div className="home">
+                    home
+                </div>
             </HomeDiv>
         )
     }
