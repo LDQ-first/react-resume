@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import  NavDiv  from '../../styled/Nav.js'
+import classNames from 'classnames'
 
 export default class Nav extends Component {
     static get propTypes() {
@@ -14,6 +15,9 @@ export default class Nav extends Component {
         this.state = {
             navArr: [
                 {
+                    name: '首页'
+                },
+                {
                     name: '项目'
                 },
                 {
@@ -25,15 +29,23 @@ export default class Nav extends Component {
                 {
                     name: '联系方式'
                 },
-            ]
+            ],
+            activeIndex: 0,
         }
     }
 
     render() {
 
-        const { navArr } = this.state
+        const { navArr, activeIndex } = this.state
 
-        
+        const navs = navArr.map((item, index) => {
+            return (
+                <li key={index} className={classNames('nav', {active: activeIndex === index})}
+                onClick={() => {}}>
+                    {item.name}
+                </li>
+            )
+        })
 
         
 
@@ -41,7 +53,15 @@ export default class Nav extends Component {
        
         return (
             <NavDiv>
-               
+               <div className="navContent">
+                    <div className="logo">
+                            <span className="name">刘德铨 </span> 
+                            / <span className="cv">简历</span>
+                    </div>
+                    <ul className="navs">
+                        {navs ? navs : null}
+                    </ul>
+               </div>
             </NavDiv>
         )
     }

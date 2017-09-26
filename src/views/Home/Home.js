@@ -33,8 +33,9 @@ class Home extends Component {
         
         return (
             <HomeDiv>
-                <div className="home">
-                    <Header />
+                <Header />
+                <div>
+                    home
                 </div>
             </HomeDiv>
         )

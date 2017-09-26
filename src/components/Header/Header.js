@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import  HeaderDiv  from '../../styled/Header.js'
 import Navs from '../Nav/Nav.js'
+import classNames from 'classnames'
 
 export default class Header extends Component {
     static get propTypes() {
@@ -70,7 +71,13 @@ export default class Header extends Component {
                 <div className="bgImg-list">
                     {Imglists}
                 </div>
-               <Navs />
+                <Navs />
+                <div className="headerContent">
+                    <h1 className="title">
+                       你好！我是 <span className="name">刘德铨</span>
+                    </h1>
+                    <h2 className="job">求职：前端工程师</h2>
+                </div>
             </HeaderDiv>
         )
     }

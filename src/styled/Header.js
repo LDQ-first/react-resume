@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
 const HeaderDiv = styled.div`
-   position: relative;
+    position: relative;
     overflow: hidden;
     min-height: 100vh;
     color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ::before {
         content: '';
         position: absolute;
@@ -16,7 +19,7 @@ const HeaderDiv = styled.div`
     }
    .bgImg-list {
         position: absolute;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         z-index: -200;
         .imglist {
@@ -24,7 +27,7 @@ const HeaderDiv = styled.div`
             opacity: 0;
             position: absolute;
             transition: opacity 1.25s;
-            width: 120%;
+            height: 120%;
             &.hide {
                 opacity: 1;
             }
@@ -47,9 +50,27 @@ const HeaderDiv = styled.div`
                     transform: translate(-5%, -2%)
                 }
             }
+        }    
+    }
+
+    .headerContent {
+        height: 100px;
+        text-align: center;
+        .title {
+             text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9,
+                    0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+                    0 0 5px rgba(0,0,0,0.1),
+                    0 1px 3px rgba(0,0,0,0.3);
+            .name {
+                color: #2196F3;
+            } 
+        }
+        .job {
 
         }
     }
+
+
 `
 
 module.exports = HeaderDiv
