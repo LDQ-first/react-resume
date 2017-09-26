@@ -6,6 +6,9 @@ import {
     
 } from '../../selector/home.js'
 import HomeDiv from '../../styled/Home.js'
+import Header from '../../components/Header/Header.js'
+
+
 
 class Home extends Component {
     static get propTypes() { 
