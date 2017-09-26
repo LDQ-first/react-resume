@@ -18,6 +18,9 @@ export default class Nav extends Component {
                     name: '首页'
                 },
                 {
+                    name: '个人简介'
+                },
+                {
                     name: '项目'
                 },
                 {
