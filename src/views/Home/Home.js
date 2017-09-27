@@ -53,10 +53,22 @@ class Home extends Component {
             if( Math.ceil(b.scrollTop) >= top - 125  && Math.ceil(b.scrollTop) < nextTop - 125) {
             //    console.log(Math.ceil(b.scrollTop), top - 125, nextTop - 125)
                 if(activeIndex !== i) {
-                    console.log(activeIndex, i)
+              //      console.log(activeIndex, i)
                     /*this._chooseNav(i)*/
                 }
             }
+
+              console.log(Math.ceil(b.scrollTop), top - 125 - 22, top - 125 + 22)
+
+            if(top -125 <= 0) {
+                console.log(i)
+            }
+            else if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
+              
+               console.log(i)
+                
+            } 
+
         }
         
 
@@ -78,14 +90,20 @@ class Home extends Component {
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-          //   console.log(Math.ceil(b.scrollTop), top, top - 125)
-            if( Math.ceil(b.scrollTop) >= top - 125 ||   Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
-                b.scrollTop = top - 125
-              //  console.log(Math.ceil(b.scrollTop))
-                clearInterval(timer)
+             console.log(Math.ceil(b.scrollTop), top - 125)
+            if( b.scrollTop === 0 && top === 0) {
+                 clearInterval(timer)
             }
+            else if( Math.ceil(b.scrollTop) > top - 125 ) {
+                 b.scrollTop -= 22
+            } 
+            else if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ||
+              Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
+               b.scrollTop = top - 125
+                clearInterval(timer)
+            } 
             else {
-                b.scrollTop +=  22
+                b.scrollTop += 22 
             }  
              
         }, 1000 / 60)
