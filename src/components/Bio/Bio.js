@@ -9,6 +9,44 @@ export default class Bio extends Component {
         }
     }
 
+    constructor(props) {
+        super(props) 
+        this.state = {
+            infoArr: [
+                {
+                    name: '年龄',
+                    icon: 'yingerchezulin',
+                    content: '22岁'
+                },
+                {
+                    name: '学历',
+                    icon: 'jiaoyu01',
+                    content: ['广东工业大学', '本科', '计算机科学与技术', '英语四级'] 
+                },
+                {   
+                    name: '手机',
+                    icon: 'shouji',
+                    content: '18826136763'
+                },
+                {
+                    name: '微信',
+                    icon: 'wechat-copy',
+                    content: '18826136763'
+                },
+                {
+                    name: '163邮箱',
+                    icon: 'youxiang',
+                    content: '18826136763@163.com'
+                },
+                {
+                    name: 'QQ邮箱',
+                    icon: 'youxiang',
+                    content: '2320975287@qq.com'
+                }
+            ]
+        }
+    } 
+
     componentDidMount() {
          const {_this} = this.props
         /* console.log(this._bio)
@@ -18,14 +56,67 @@ export default class Bio extends Component {
     
 
     render() {
-        const {_this} = this.props
+        const { _this } = this.props
+        const { infoArr } = this.state
+
+        let infos = infoArr.map((info, index) => {
+
+            let contents = null
+            if(info.content instanceof Array) {
+                 contents = info.content.map((content, index) => {
+                     return (
+                         <p key={index} className="content">
+                            {content}
+                         </p>
+                     )
+                 })
+            }
+           
+
+
+            return (
+                <li key={index} className="info">
+                    <svg className="icon" aria-hidden="true">
+                        <use xlinkHref={`#icon-${info.icon}`}></use>
+                    </svg>
+                    <span className="name">{info.name}</span>
+                    { 
+                        contents 
+                        ?  <div className="contentWrap">
+                            {contents}
+                           </div> 
+                        :  <p className="content">{info.content}</p>
+                    }
+                </li>
+            )
+        })
+
+
+
      
         return (
             <BioDiv>
               <div className="bioContent" ref={bio => this._bio = bio}>
-                  <h2 className="bio">
+                  <h2 className="title">
                     简介
                   </h2>
+                  <div className="bio">
+                      <div className="avatarWrap">
+                          <div className="avatar" title="刘德铨"></div>
+                          <div className="content">
+                              <h2 className="name">刘德铨</h2>
+                              <p className="job">前端工程师</p>
+                          </div>
+                      </div>
+                      <div className="infoWrap">
+                          <h2 className="info-title">
+                            个人信息
+                          </h2>
+                         <ul className="infos">
+                            { infos ? infos : null }
+                         </ul>
+                      </div>
+                  </div>
               </div>
             </BioDiv>
         )

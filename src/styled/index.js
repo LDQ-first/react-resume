@@ -66,9 +66,6 @@ export default injectGlobal`
             color: #3f51b5;
         }
     }
-    p {
-        margin: 10px 0;
-    }
     button {
         display: inline-block;
         cursor: pointer;
@@ -79,9 +76,8 @@ export default injectGlobal`
     .icon {
         width: 1.6em; height: 1.6em;
         vertical-align: middle;
-        fill: #ee838c;
+        fill: #2196F3;
         overflow: hidden;
-        border: 2px solid #ee838c;
         border-radius: 50%;
         padding: 2px;
         margin-right: 3px;
@@ -91,11 +87,11 @@ export default injectGlobal`
         }
         &.github {
             fill: #191717;
-            border-color: #191717;
+            /*border-color: #191717;*/
         }
         &.markdown {
             fill: #50C28B;
-            border-color: #50C28B;
+           /* border-color: #50C28B;*/
         }
     }
     svg {
