@@ -117,6 +117,9 @@ export default class Bio extends Component {
                          </ul>
                       </div>
                   </div>
+                  <div className="desWrap">
+                        <p className="des">一个充满热情，有耐心，有强大自我驱动力的前端工程师</p>
+                    </div>
               </div>
             </BioDiv>
         )

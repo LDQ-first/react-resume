@@ -20,6 +20,7 @@ const BioDiv = styled.div`
             }
             .avatarWrap {
                 margin-bottom: 1em;
+                display: inline-table;
                 .avatar {
                     outline: 1px solid red;
                     width: 134px;
@@ -51,6 +52,8 @@ const BioDiv = styled.div`
                         }
                         .name {
                             margin-right: 1em;
+                            min-width: 60px;
+                            text-align: right;
                         }
                         .content {
 
@@ -61,6 +64,12 @@ const BioDiv = styled.div`
                         }
                     }
                 }
+            }
+        }
+        .desWrap {
+
+            .des {
+                text-align: center;
             }
         }
     }
