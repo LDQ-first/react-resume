@@ -8,6 +8,7 @@ import App from './components/App/App'
 import { fromJS } from 'immutable'
 import '../static/font/iconfont.js'
 import './styled'
+import 'antd/dist/antd.css'
 
 const initialState = fromJS({})
 const store = configureStore(initialState)

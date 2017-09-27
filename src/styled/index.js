@@ -18,6 +18,7 @@ export default injectGlobal`
         overflow: auto;
     }
     body {
+        overflow-x: hidden;
         height: 100vh;
         line-height: 1.6;
         min-width: 320px;
@@ -151,6 +152,8 @@ export default injectGlobal`
             transform: scale3d(1, 1, 1);
         }
     }
+
+    
 `
 
 const Container = styled.div`

@@ -50,7 +50,7 @@ module.exports =  {
                     use: [{
                         loader: 'css-loader',
                         options: {
-                            modules: true,
+                            modules: false,
                             minimize: true //压缩
                         }
                     }]
@@ -63,7 +63,7 @@ module.exports =  {
                     use: [{
                         loader: "css-loader",
                         options: {
-                            modules: true,
+                            modules: false,
                             minimize: true //压缩
                         }
                     }, {

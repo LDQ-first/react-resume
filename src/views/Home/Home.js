@@ -15,6 +15,8 @@ import Education from '../../components/Education/Education.js'
 import Contact from '../../components/Contact/Contact.js'
 import { toJS } from 'immutable'
 
+
+
 class Home extends Component {
     static get propTypes() { 
         return { 
@@ -135,6 +137,7 @@ class Home extends Component {
                 <Contact _this={this} />
                 <div className="home">
                     others
+
                 </div>
             </HomeDiv>
         )
