@@ -44,34 +44,22 @@ class Home extends Component {
         const b = document.body
         const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
         const scrollToJS = scroll.toJS() 
-    
-        for(let i = 0; i < scrollToJS.length; i++ ) {
-            const top = scrollToJS[i]
-            const preTop = scrollToJS[i - 1]
-            const nextTop = scrollToJS[i + 1]
-            
-            if( Math.ceil(b.scrollTop) >= top - 125  && Math.ceil(b.scrollTop) < nextTop - 125) {
-            //    console.log(Math.ceil(b.scrollTop), top - 125, nextTop - 125)
-                if(activeIndex !== i) {
-              //      console.log(activeIndex, i)
-                    /*this._chooseNav(i)*/
-                }
-            }
 
-              console.log(Math.ceil(b.scrollTop), top - 125 - 22, top - 125 + 22)
-
-            if(top -125 <= 0) {
-                console.log(i)
-            }
-            else if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
-              
-               console.log(i)
-                
-            } 
-
+        if(Math.ceil(b.scrollTop) < scrollToJS[1] - 125 ) {
+           // console.log(0)
+             this._chooseNav(0, false)
+             return 
         }
         
-
+        for(let i = 0; i < scrollToJS.length; i++ ) {
+            const top = scrollToJS[i]
+          //    console.log(Math.ceil(b.scrollTop), top - 125 - 22, top - 125 + 22)
+            if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
+               //console.log(i)
+               this._chooseNav(i, false)
+                
+            } 
+        }
     }
     
 
@@ -80,17 +68,20 @@ class Home extends Component {
          setTopData(index, top)
     }
 
-    _chooseNav (index) {
+    _chooseNav (index, isScroll = true) {
         const {chooseNavIndex, scroll} = this.props
         chooseNavIndex(index)
-         const scrollToJS = scroll.toJS()
-         this._scroll(scrollToJS[index])
+         if(isScroll) {
+             const scrollToJS = scroll.toJS()
+             this._scroll(scrollToJS[index])
+         }
+         
     }
 
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-             console.log(Math.ceil(b.scrollTop), top - 125)
+         //    console.log(Math.ceil(b.scrollTop), top - 125)
             if( b.scrollTop === 0 && top === 0) {
                  clearInterval(timer)
             }
