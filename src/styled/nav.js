@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const NavDiv = styled.div`
+const NavDiv = styled.div`  
    position: absolute;
    top: 0;
    width: 100vw;
@@ -73,6 +73,68 @@ const NavDiv = styled.div`
                         visibility: visible;
                         transform: scaleX(1);
                     }
+                }
+            }
+            @media (max-width: 768px) {
+
+            }
+        }
+        .toggle {
+            display: none;
+            padding: 6px 0 0 0;
+            height: 44px;
+            width: 44px;
+            margin-right: 1em;
+            @media (max-width: 768px) {
+                display: block;
+            }
+            &:hover {
+                .bar {
+                    &::before {
+                        top: -10px;
+                    }
+                    &::after {
+                        bottom: -10px;
+                    }
+                }
+            }
+            &.active {
+                .bar {
+                    background: transparent;
+                    &::before {
+                        top: 0px;
+                        transform: rotateZ(45deg);
+                    }
+                    &::after {
+                        bottom: 0px;
+                        transform: rotateZ(-45deg);
+                    }
+                }
+            }
+            .bar {
+                position: relative;
+                left: 50%;
+                margin-left: -12.5px;
+                display: inline-block;
+                width: 25px;
+                height: 3px;
+                background: #4AE3B5;
+                transition: all .2s ease-out;
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -12.5px;
+                    width: 25px;
+                    height: 3px;
+                    background: #4AE3B5;
+                    transition: 0.2s;
+                }
+                &::before {
+                    top: -7px;
+                }
+                &::after {
+                    bottom: -7px;
                 }
             }
         }

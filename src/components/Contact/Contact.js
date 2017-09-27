@@ -23,7 +23,7 @@ export default class Contact extends Component {
             <ContactDiv>
                <div className="contactContent" ref={contact => this._contact = contact}>
                    <h2 className="contact">
-                    教育
+                    联系方式
                   </h2>
                </div>
             </ContactDiv>

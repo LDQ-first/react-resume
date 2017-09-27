@@ -56,13 +56,23 @@ export default class Nav extends Component {
                     name: '联系方式'
                 },
             ],
-             fixed: false
+             fixed: false,
+             isSpread: false
         }
     }
 
+    _toggle () {
+        const { isSpread } = this.state
+        this.setState({
+            isSpread: !isSpread
+        })
+    }
+
+
+
     render() {
         const { _this, activeIndex } = this.props
-        const { navArr, fixed } = this.state
+        const { navArr, fixed, isSpread } = this.state
         /*if(activeIndex) {
             console.log(activeIndex)
         }*/
@@ -90,6 +100,10 @@ export default class Nav extends Component {
                     <ul className="navs">
                         {navs ? navs : null}
                     </ul>
+                    <a href="javascript:;" className={classNames('toggle', {active: isSpread})} 
+                    onClick={() => { this._toggle() }}>
+                        <i className="bar"></i>
+                    </a>
                </div>
             </NavDiv>
         )
