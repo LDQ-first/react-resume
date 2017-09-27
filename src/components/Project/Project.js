@@ -11,8 +11,8 @@ export default class Project extends Component {
 
      componentDidMount() {
          const {_this} = this.props
-         console.log(this._project)
-         console.log(this._project.offsetTop)
+         /*console.log(this._project)
+         console.log(this._project.offsetTop)*/
          _this._setTopData(2, this._project.offsetTop)
     }
     
