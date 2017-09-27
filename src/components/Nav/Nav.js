@@ -47,7 +47,7 @@ export default class Nav extends Component {
                     name: '项目'
                 },
                 {
-                    name: '技术'
+                    name: '技能'
                 },
                 {
                     name: '教育'
