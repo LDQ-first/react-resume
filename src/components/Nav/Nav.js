@@ -20,6 +20,7 @@ export default class Nav extends Component {
             })
         }
         window.addEventListener('scroll', () => {
+             const { _this } = this.props
              if(document.body.scrollTop > document.body.clientHeight - 400) {
                 this.setState({
                     fixed: true
@@ -29,6 +30,7 @@ export default class Nav extends Component {
                     fixed: false
                 })
             }
+            _this._changeNavIndex()
         })
     }
     
@@ -80,7 +82,7 @@ export default class Nav extends Component {
         const navs = navArr.map((item, index) => {
             return (
                 <li key={index} className={classNames('nav', {active: activeIndex === index})}
-                onClick={() => {_this._chooseNav(index)}}>
+                onClick={() => {this._toggle();_this._chooseNav(index)}}>
                     {item.name}
                 </li>
             )

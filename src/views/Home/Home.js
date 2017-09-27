@@ -39,6 +39,28 @@ class Home extends Component {
     componentWillMount() {
         
     }
+
+    _changeNavIndex() {
+        const b = document.body
+        const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
+        const scrollToJS = scroll.toJS() 
+    
+        for(let i = 0; i < scrollToJS.length; i++ ) {
+            const top = scrollToJS[i]
+            const preTop = scrollToJS[i - 1]
+            const nextTop = scrollToJS[i + 1]
+            
+            if( Math.ceil(b.scrollTop) >= top - 125  && Math.ceil(b.scrollTop) < nextTop - 125) {
+                console.log(Math.ceil(b.scrollTop), top - 125, nextTop - 125)
+                if(activeIndex !== i) {
+                    console.log(activeIndex, i)
+                    this._chooseNav(i)
+                }
+            }
+        }
+        
+
+    }
     
 
     _setTopData (index, top) {
@@ -54,24 +76,28 @@ class Home extends Component {
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-            console.log(b.scrollTop, top)
-             if(top >=  b.scrollTop) {
-                  if( b.scrollTop >= top - 120  ||   b.scrollTop + b.clientHeight >= b.scrollHeight - 10 ) {
-                        clearInterval(timer)
-                    }
-                    else {
-                        b.scrollTop +=  22
-                    }
-             }
+             console.log(Math.ceil(b.scrollTop), top, top - 125)
+            if( Math.ceil(b.scrollTop) >= top - 125 ||   Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
+                b.scrollTop = top - 125
+                console.log(Math.ceil(b.scrollTop))
+                clearInterval(timer)
+            }
             else {
-                if(b.scrollTop <= top + 22 || b.scrollTop <= 50) {
+                b.scrollTop +=  22
+            }
+            /* }
+            else {
+                if(b.scrollTop <= 50) {
                     b.scrollTop = 0
+                }
+                else if(b.scrollTop <= top - 126 ) {
                     clearInterval(timer)
                 }
                 else {
                     b.scrollTop -=  22
                 }
-            }
+            }*/
+            
             
              
         }, 1000 / 60)

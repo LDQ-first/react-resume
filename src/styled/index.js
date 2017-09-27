@@ -45,9 +45,12 @@ export default injectGlobal`
     }
 
     ::-webkit-scrollbar-thumb {
-        height: 0.5em;
+       /* height: 0.5em;*/
         border-radius: 0.25em;
         background: #498bd6 linear-gradient(180deg,#fff,rgba(3,169,244,.5),#0277bd)
+    }
+    ::-webkit-scrollbar-track-piece {
+        
     }
     ul,
     li {
