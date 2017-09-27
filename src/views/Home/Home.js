@@ -46,16 +46,16 @@ class Home extends Component {
         const scrollToJS = scroll.toJS() 
 
         if(Math.ceil(b.scrollTop) < scrollToJS[1] - 125 ) {
-           // console.log(0)
+            console.log(0)
              this._chooseNav(0, false)
              return 
         }
         
-        for(let i = 0; i < scrollToJS.length; i++ ) {
+        for(let i = 1; i < scrollToJS.length; i++ ) {
             const top = scrollToJS[i]
           //    console.log(Math.ceil(b.scrollTop), top - 125 - 22, top - 125 + 22)
             if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
-               //console.log(i)
+               console.log(i)
                this._chooseNav(i, false)
                 
             } 
