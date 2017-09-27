@@ -33,7 +33,7 @@ const HeaderDiv = styled.div`
             opacity: 0;
             position: absolute;
             transition: opacity 1.25s;
-            height: 120%;
+            width: 120%;
             &.hide {
                 opacity: 1;
             }
