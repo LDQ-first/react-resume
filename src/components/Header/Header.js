@@ -56,7 +56,7 @@ export default class Header extends Component {
                 'https://ldq-first.github.io/react-resume/static/img/Header/015.jpg',
                 'https://ldq-first.github.io/react-resume/static/img/Header/016.jpg',
             ],
-            imgIndex: 0
+            imgIndex: 0 
         }
     }
 
