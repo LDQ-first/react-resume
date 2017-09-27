@@ -10,6 +10,9 @@ import HomeDiv from '../../styled/Home.js'
 import Header from '../../components/Header/Header.js'
 import Bio from '../../components/Bio/Bio.js'
 import Project from '../../components/Project/Project.js'
+import Skill from '../../components/Skill/Skill.js'
+import Education from '../../components/Education/Education.js'
+import Contact from '../../components/Contact/Contact.js'
 import { toJS } from 'immutable'
 
 class Home extends Component {
@@ -51,15 +54,15 @@ class Home extends Component {
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-            b.scrollTop + b.clientHeight 
-            if(b.scrollTop === top || b.scrollTop + b.clientHeight >= b.scrollHeight - 10) {
+            if(b.scrollTop >= top - 120 || b.scrollTop + b.clientHeight >= b.scrollHeight - 10) {
                 clearInterval(timer)
             }
             else {
-                b.scrollTop +=  top * 0.2
+                b.scrollTop +=  22
             }
+             /*console.log(b.scrollTop, top)*/
         }, 1000 / 60)
-        /*console.log(document.body.scrollTop)*/
+       
     }
     
     
@@ -93,6 +96,9 @@ class Home extends Component {
                 <Header _this={this} activeIndex = {activeIndex}/>
                 <Bio _this={this} />
                 <Project _this={this} />
+                <Skill _this={this} />
+                <Education _this={this} />
+                <Contact _this={this} />
                 <div className="home">
                     others
                 </div>

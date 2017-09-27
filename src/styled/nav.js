@@ -18,7 +18,7 @@ const NavDiv = styled.div`
             }
         }
        .navContent {
-           margin: 0;
+           margin: 0 auto;
            .navs {
                .nav {
                     color: rgba(0, 0, 0, 0.5);
@@ -32,12 +32,11 @@ const NavDiv = styled.div`
    }
    .navContent {
        max-width: 900px;
-       margin: 0 auto;
        display: flex;
        justify-content: space-between;
        padding: 8px 1em;
-       margin: 0.2em;
-       transition: all 0.5s linear;
+       margin: 0.2em auto;
+       transition: all 0.3s linear;
        .logo {
             padding: 4px 1em;
             font-size: 18px;

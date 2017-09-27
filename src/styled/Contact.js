@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-const EducationDiv = styled.div`
+const ContactDiv = styled.div`
      padding: 4em 0;
-    .educationContent {
+    .contactContent {
         max-width: 900px;
         margin: 0 auto;
-        .education {
+        .contact {
             text-align: center;
         }
     }
     
 `
 
-export default EducationDiv
+export default ContactDiv

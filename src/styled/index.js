@@ -74,10 +74,26 @@ export default injectGlobal`
         -webkit-appearance: none;
     }
     .icon {
-        width: 1em; height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
+        width: 1.6em; height: 1.6em;
+        vertical-align: middle;
+        fill: #ee838c;
         overflow: hidden;
+        border: 2px solid #ee838c;
+        border-radius: 50%;
+        padding: 2px;
+        margin-right: 3px;
+        cursor: pointer;
+        &:hover {
+            animation: shakeIcon 1s ease-in;
+        }
+        &.github {
+            fill: #191717;
+            border-color: #191717;
+        }
+        &.markdown {
+            fill: #50C28B;
+            border-color: #50C28B;
+        }
     }
     svg {
         fill: ${svgBlue} !important;
@@ -101,57 +117,44 @@ export default injectGlobal`
         opacity: 0.01;
         transition: opacity 300ms ease-in;
     }
+    .textOverflow {
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    @keyframes shakeIcon {
+        0% {
+            transform: scale3d(1, 1, 1);
+        }
+
+        30% {
+            transform: scale3d(1.25, 0.75, 1);
+        }
+
+        40% {
+            transform: scale3d(0.75, 1.25, 1);
+        }
+
+        50% {
+            transform: scale3d(1.15, 0.85, 1);
+        }
+
+        65% {
+            transform: scale3d(.95, 1.05, 1);
+        }
+
+        75% {
+            transform: scale3d(1.05, .95, 1);
+        }
+
+        100% {
+            transform: scale3d(1, 1, 1);
+        }
+    }
 `
 
 const Container = styled.div`
-    padding: 1em;
-    padding-left: 13rem;
-    &.per {
-        padding: 0;
-        padding-left: 10rem;
-    } 
-    &.noPadding {
-        padding: 0;
-        padding-left: 10rem;
-    }
-    @media (max-width: 50em) {
-        padding: 1em;
-        padding-top: 70px; 
-        &.noPadding {
-            padding: 0;  
-        }
-        &.topPadding {
-            padding: 0;
-            padding-top: 53px;
-        }
-    }
-    .getSong {
-        margin-top: 1em;
-    }
-    .githubAppBar {
-        background: ${mainBlue};
-    }
-    &.userInfo {
-        .githubUrl {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 1em;
-            cursor: pointer;
-            text-transform: lowercase;
-            .item-icon {
-                width: 2em;
-                height: 2em;
-                color: #007bba;
-                margin-right: 2em;
-            }
-        }
-    }
-    &.lazyArea {
-        display: flex;
-        flex-wrap: wrap;
-    }
     
     
 `
