@@ -51,10 +51,10 @@ class Home extends Component {
             const nextTop = scrollToJS[i + 1]
             
             if( Math.ceil(b.scrollTop) >= top - 125  && Math.ceil(b.scrollTop) < nextTop - 125) {
-                console.log(Math.ceil(b.scrollTop), top - 125, nextTop - 125)
+            //    console.log(Math.ceil(b.scrollTop), top - 125, nextTop - 125)
                 if(activeIndex !== i) {
                     console.log(activeIndex, i)
-                    this._chooseNav(i)
+                    /*this._chooseNav(i)*/
                 }
             }
         }
@@ -69,36 +69,24 @@ class Home extends Component {
     }
 
     _chooseNav (index) {
-        const {chooseNavIndex} = this.props
+        const {chooseNavIndex, scroll} = this.props
         chooseNavIndex(index)
+         const scrollToJS = scroll.toJS()
+         this._scroll(scrollToJS[index])
     }
 
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-             console.log(Math.ceil(b.scrollTop), top, top - 125)
+          //   console.log(Math.ceil(b.scrollTop), top, top - 125)
             if( Math.ceil(b.scrollTop) >= top - 125 ||   Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                 b.scrollTop = top - 125
-                console.log(Math.ceil(b.scrollTop))
+              //  console.log(Math.ceil(b.scrollTop))
                 clearInterval(timer)
             }
             else {
                 b.scrollTop +=  22
-            }
-            /* }
-            else {
-                if(b.scrollTop <= 50) {
-                    b.scrollTop = 0
-                }
-                else if(b.scrollTop <= top - 126 ) {
-                    clearInterval(timer)
-                }
-                else {
-                    b.scrollTop -=  22
-                }
-            }*/
-            
-            
+            }  
              
         }, 1000 / 60)
        
@@ -108,9 +96,7 @@ class Home extends Component {
     componentWillReceiveProps(nextProps) {
         const {scroll, activeIndex}  = nextProps
         const scrollToJS = scroll.toJS()      
-        if(activeIndex !== this.props.activeIndex) {
-            this._scroll(scrollToJS[activeIndex])
-        }
+        
     }
 
 
