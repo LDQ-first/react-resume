@@ -43,10 +43,10 @@ const HeaderDiv = styled.div`
             }
             @keyframes even {
                0% {
-                    transform: scaleX(1)
+                    transform: scale3d(1, 1, 1)
                 }
                 100% {
-                    transform: scale3d(1.3, 1.3, 1.3)
+                    transform: scale3d(1.2, 1.2, 1.2)
                 }
             }
             @keyframes odd {
@@ -54,7 +54,7 @@ const HeaderDiv = styled.div`
                     transform: translate(0)
                 }
                 100% {
-                    transform: translate(-5%, -2%)
+                    transform: translate(5%, 2%)
                 }
             }
         }    

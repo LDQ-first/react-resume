@@ -4,11 +4,14 @@ const NavDiv = styled.div`
    position: absolute;
    top: 0;
    width: 100vw;
+   
    &.fixed {
        position: fixed;
        top: 0;
        background: #FFF;
-       
+       box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
        .logo {
             color: #2196F3;
             .name {
@@ -20,23 +23,30 @@ const NavDiv = styled.div`
         }
        .navContent {
            margin: 0 auto;
-           box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+           /*box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
                     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);*/
            .navs {
-               box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+             /*  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
                     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);*/
                .nav {
                     color: rgba(0, 0, 0, 0.5);
                     &.active {
                         color: #2196F3;
                     }
                 }
-                @media (max-width: 768px) {
-                    background: #FFF;
-                }
+               
            }
+            @media (max-width: 768px) {    
+                   
+                    .navs {
+                        background: #FFF;
+                        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+                                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    }
+            }
             
        }
        
@@ -93,7 +103,7 @@ const NavDiv = styled.div`
                 left: 0;
                 flex-direction: column;
                 width: 100%;
-                padding: 1em;
+                padding: 0.5em;
                 display: none;
                 &.spread {
                     display: block;
