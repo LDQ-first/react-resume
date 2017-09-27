@@ -97,7 +97,7 @@ export default class Nav extends Component {
                             <span className="name">刘德铨 </span> 
                             / <span className="cv">简历</span>
                     </div>
-                    <ul className="navs">
+                    <ul className={classNames('navs', { spread: isSpread })}>
                         {navs ? navs : null}
                     </ul>
                     <a href="javascript:;" className={classNames('toggle', {active: isSpread})} 

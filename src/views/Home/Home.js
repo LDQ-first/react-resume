@@ -54,13 +54,26 @@ class Home extends Component {
     _scroll (top) {
         const timer = setInterval(() => {
             const b = document.body
-            if(b.scrollTop >= top - 120 || b.scrollTop + b.clientHeight >= b.scrollHeight - 10) {
-                clearInterval(timer)
-            }
+            console.log(b.scrollTop, top)
+             if(top >=  b.scrollTop) {
+                  if( b.scrollTop >= top - 120  ||   b.scrollTop + b.clientHeight >= b.scrollHeight - 10 ) {
+                        clearInterval(timer)
+                    }
+                    else {
+                        b.scrollTop +=  22
+                    }
+             }
             else {
-                b.scrollTop +=  22
+                if(b.scrollTop <= top + 22 || b.scrollTop <= 50) {
+                    b.scrollTop = 0
+                    clearInterval(timer)
+                }
+                else {
+                    b.scrollTop -=  22
+                }
             }
-             /*console.log(b.scrollTop, top)*/
+            
+             
         }, 1000 / 60)
        
     }

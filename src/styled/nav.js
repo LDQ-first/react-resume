@@ -8,6 +8,7 @@ const NavDiv = styled.div`
        position: fixed;
        top: 0;
        background: #FFF;
+       
        .logo {
             color: #2196F3;
             .name {
@@ -19,6 +20,9 @@ const NavDiv = styled.div`
         }
        .navContent {
            margin: 0 auto;
+           box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
            .navs {
                .nav {
                     color: rgba(0, 0, 0, 0.5);
@@ -26,7 +30,11 @@ const NavDiv = styled.div`
                         color: #2196F3;
                     }
                 }
+                @media (max-width: 768px) {
+                    background: #FFF;
+                }
            }
+            
        }
        
    }
@@ -37,6 +45,7 @@ const NavDiv = styled.div`
        padding: 8px 1em;
        margin: 0.2em auto;
        transition: all 0.3s linear;
+       position: relative;
        .logo {
             padding: 4px 1em;
             font-size: 18px;
@@ -76,7 +85,23 @@ const NavDiv = styled.div`
                 }
             }
             @media (max-width: 768px) {
-
+                position: absolute;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                width: 100%;
+                padding: 1em;
+                display: none;
+                &.spread {
+                    display: block;
+                }
+                .nav {
+                     &.active {
+                        &::before {
+                            background: transparent;
+                        }
+                    }
+                }
             }
         }
         .toggle {
