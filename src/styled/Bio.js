@@ -12,6 +12,7 @@ const BioDiv = styled.div`
         .title {
             text-align: center;
             margin-bottom: 1em;
+             font-size: 20px;
         }
         .bio {
             display: flex;

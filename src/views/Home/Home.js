@@ -59,7 +59,7 @@ class Home extends Component {
             if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
                console.log(i)
                this._chooseNav(i, false)
-                
+                break;
             } 
         }
     }

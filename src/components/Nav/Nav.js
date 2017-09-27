@@ -20,6 +20,7 @@ export default class Nav extends Component {
             })
         }
         window.addEventListener('scroll', () => {
+            
              const { _this } = this.props
              if(document.body.scrollTop > document.body.clientHeight - 400) {
                 this.setState({

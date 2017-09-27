@@ -28,7 +28,12 @@ export default class Project extends Component {
                         `引入Immutable/Reselect 优化state，处理异步请求，
                             开眼API实现跨域，React全家桶脚手架搭建`
                     ],
-                    icon: []
+                    icon: [ 
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
                 },
                 {
                     review: 'https://ldq-first.github.io/vue-CNode/dist/#/',
@@ -40,7 +45,12 @@ export default class Project extends Component {
                         `实现了登录，回复，发帖，收藏，点赞，查看消息，更换主题色，退出等功能`,
                         `Axios处理异步请求，滚动加载更多，使用使用Vuex实现更换主题色`
                     ],
-                    icon: []
+                    icon: [
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
                 },
                 {
                     review: '',
@@ -53,7 +63,12 @@ export default class Project extends Component {
                         ``,
                         ``
                     ],
-                    icon: []
+                    icon: [
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
                 },
                 {
                     review: '',
@@ -65,7 +80,12 @@ export default class Project extends Component {
                         ``,
                         ``
                     ],
-                    icon: []
+                    icon: [
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
                 },
                 {
                     review: '',
@@ -77,7 +97,12 @@ export default class Project extends Component {
                         ``,
                         ``
                     ],
-                    icon: []
+                    icon: [
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
                 }
             ]
         }
@@ -96,10 +121,85 @@ export default class Project extends Component {
         const { projectArr } = this.state
 
         const projects = projectArr.map((project, index) => {
+
+            const contents = project.content.map((content, i) => {
+                return (
+                    <li key={i} className="detailContent">
+                        { 
+                            i === 0 ? 
+                            <p className="detailContent-p">
+                                <span className="detailContent-p-title">技术栈：</span>
+                                { content }
+                            </p> : 
+                            i === 1 ? 
+                            <p className="detailContent-p">
+                                <span className="detailContent-p-title">内容：</span>
+                                { content }
+                            </p> : 
+                            i === 2 ?
+                            <p className="detailContent-p">
+                                <span className="detailContent-p-title">难点：</span>
+                                { content }
+                            </p> :
+                            i === 3 ?
+                            <p className="detailContent-p">
+                                <span className="detailContent-p-title">部署：</span>
+                                { content }
+                            </p> : null
+                        }
+                    </li>
+                )
+            })
+
+            const technologys = project.icon.map((icon, j) => {
+                return (
+                    <li key={j} className="technologyContent">
+                        <a href={ icon.link } className="technologyContent-link">
+                            <i className={ icon.className }></i>
+                        </a>
+                    </li>
+                )
+            })
+
+
             return (
                 <div key={index} className="project">
                     <div className="project-item">
-                        {index}
+                        <div className="img" 
+                             style={{
+                                background: `url(${project.img}) no-repeat center/cover`
+                         }}>
+                        </div>
+                        <div className="project-detail">
+                            <header className="header">
+                                <h3 className="detail-title">
+                                    <a className="detail-title-link" href={project.review} target="_blank">
+                                        {project.title}
+                                        <svg className="icon" aria-hidden="true">
+                                            <use xlinkHref="#icon-lianjie"></use>
+                                        </svg>
+                                    </a>
+                                </h3>
+                                <span className="sourceCode" title="源码">
+                                    <a className="sourceCode-link"  href={project.sourceCode} target="_blank">
+                                        源码
+                                        <svg className="icon github" aria-hidden="true">
+                                            <use xlinkHref="#icon-github"></use>
+                                        </svg>
+                                    </a>
+                                </span>
+                            </header>
+                            <div className="detail-content">
+                                <ul className="detailContents">
+                                    { contents }
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="project-technology">
+                            <ul className="technologyContents">
+                                { technologys }
+                            </ul>
+                        </div>
                     </div>
                 </div>
             )

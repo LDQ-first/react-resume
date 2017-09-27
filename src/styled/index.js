@@ -18,7 +18,6 @@ export default injectGlobal`
         overflow: auto;
     }
     body {
-        overflow-x: hidden;
         height: 100vh;
         line-height: 1.6;
         min-width: 320px;
@@ -73,6 +72,9 @@ export default injectGlobal`
         border: none;
         outline: none;
         -webkit-appearance: none;
+    }
+    #app {
+        overflow-x: hidden;
     }
     .icon {
         width: 1.6em; height: 1.6em;
