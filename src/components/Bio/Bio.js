@@ -102,10 +102,12 @@ export default class Bio extends Component {
                   </h2>
                   <div className="bio">
                       <div className="avatarWrap">
-                          <div className="avatar" title="刘德铨"></div>
-                          <div className="content">
-                              <h2 className="name">刘德铨</h2>
-                              <p className="job">前端工程师</p>
+                          <div className="avatarContent">
+                             <div className="avatar" title="刘德铨"></div>
+                             <div className="content">
+                                <h2 className="name">刘德铨</h2>
+                                <p className="job">前端工程师</p>
+                             </div>
                           </div>
                       </div>
                       <div className="infoWrap">

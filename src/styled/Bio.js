@@ -6,6 +6,9 @@ const BioDiv = styled.div`
     .bioContent {
         max-width: 900px;
         margin: 0 auto;
+        @media (max-width: 768px) {
+            text-align: center;
+        }
         .title {
             text-align: center;
             margin-bottom: 1em;
@@ -13,34 +16,52 @@ const BioDiv = styled.div`
         .bio {
             display: flex;
             justify-content: space-around;
+            margin-bottom: 2em;
             @media (max-width: 768px) {
-                flex-direction: column;
-                align-items: center;
-                /*justify-content: space-around;*/
+                display: inline-block;
             }
             .avatarWrap {
-                margin-bottom: 1em;
-                display: inline-table;
-                .avatar {
-                    outline: 1px solid red;
-                    width: 134px;
-                    height: 150px;
-                 /*   background: url(../../static/img/ldq.jpg) no-repeat 0 0/cover; */
-                }
-                .content {
-                    .name {
-
+                margin-bottom: 2em;
+                padding: 1em;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                            0 2px 6px rgba(30, 136, 229, 0.5);
+                .avatarContent {
+                    box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                                0 2px 6px rgba(30, 136, 229, 0.5);
+                    .avatar {
+                        outline: 1px solid red;
+                        width: 134px;
+                        height: 150px;
+                    /*   background: url(../../static/img/ldq.jpg) no-repeat 0 0/cover; */
                     }
-                    .job {
+                    .content {
+                        text-align: center;
+                        padding: 1em;
+                        .name {
 
+                        }
+                        .job {
+
+                        }
                     }
                 }
-
             }
             .infoWrap {
+                flex: 1;
                 margin: 0 1em;
+                margin-bottom: 2em;
+                padding: 1em;
+                box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                            0 2px 6px rgba(30, 136, 229, 0.5);
+                @media (max-width: 768px) {
+                    margin: 0 0 2em 0;
+                }
                 .info-title {
-
+                    text-indent: 0.5em;
                 }
                 .infos {
 
@@ -67,7 +88,13 @@ const BioDiv = styled.div`
             }
         }
         .desWrap {
-
+            box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                        0 2px 6px rgba(30, 136, 229, 0.5);
+            border-left: 8px solid rgba(30, 136, 229, 1);
+            padding: 1em;
+            @media (max-width: 768px) {
+               margin: 0 2em;
+            }
             .des {
                 text-align: center;
             }
