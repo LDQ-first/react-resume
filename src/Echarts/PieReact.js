@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import echarts from 'echarts/lib/echarts'
 import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
+import 'echarts/lib/component/toolbox'
+import 'echarts/lib/component/title'
 import 'echarts/lib/chart/pie'
 
 
@@ -40,7 +42,7 @@ export default class PieReact extends Component {
   }
   
   render() {
-    const { width="100%", height = '200px' } = this.props
+    const { width="100%", height = '500px' } = this.props
 
     return (
         <div ref={ ID => this.ID = ID } style={{ width, height }} >

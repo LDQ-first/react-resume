@@ -12,7 +12,7 @@ const SkillDiv = styled.div`
             margin-bottom: 2em;
         }
         .skill {
-
+            padding: 0.5em;
         }
     }
     

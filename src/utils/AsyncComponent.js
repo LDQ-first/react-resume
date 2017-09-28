@@ -11,8 +11,6 @@ const asyncComponent = loadComponent => (
       if (this.hasLoadedComponent()) {
         return;
       }
-
-      console.log(loadComponent)
       
       loadComponent()
       .then(module => module.default)

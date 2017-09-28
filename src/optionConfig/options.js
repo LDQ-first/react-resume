@@ -3,31 +3,58 @@
 
 export const pieOption = {
    /* backgroundColor: '#424956',*/
+   title: {
+        text: '技术栈',
+        textStyle: {
+            color: '#FFF',
+            fontWeight: 'bold',
+            fontSize: 18
+        },
+        x: 'center'
+    },
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)",
-
     },
     legend: {
-
-        orient: 'vertical',
-        x: 'right',
+       /* orient: '',*/
+        x: 'center',
+        top: 50,
         itemWidth: 14,
         itemHeight: 14,
         align: 'left',
-
+        
         data: ['HTML', 'CSS', 'SASS', 'JavaScript', 'React', 'Vue', 'Nodejs', 'Webpack'],
         textStyle: {
             color: '#fff'
         }
     },
+    toolbox: {
+        show: true,
+        orient: 'vertical',
+        top: 5,
+        right: 30,
+        feature: {
+            saveAsImage: {
+                show: true,
+                iconStyle: {
+                    normal: {
+                        borderColor: '#FFF'
+                    }
+                }
+            }
+        }
+    },
     series: [{
         name: '技术栈',
         type: 'pie',
+        center: ['50%', '60%'],
         hoverAnimation: false,
         legendHoverLink: false,
         radius: ['40%', '42%'],
-        color: ['#915872', '#3077b7', '#9a8169', '#3f8797', '#5b8144', '#307889', '#9c6a79'],
+        color: [`rgba(244, 67, 54, 1)`, 'rgba(25, 118, 210, 1)', 'rgba(230, 70, 127, 1)', 
+                'rgba(255, 214, 0, 1)', 'rgba(97, 218, 251, 1)', 'rgba(65, 184, 131, 1)', 
+                'rgba(2, 135, 0, 1)', 'rgba(86, 106, 221, 1)'],
         label: {
             normal: {
                 position: 'inner'
@@ -73,8 +100,11 @@ export const pieOption = {
     }, {
         name: '技术栈',
         type: 'pie',
+        center: ['50%', '60%'],
         radius: ['42%', '55%'],
-        color: ['#d74e67', '#0092ff', '#eba954', '#21b6b9', '#60a900', '#01949b', ' #f17677', '#556add'],
+        color: [`rgba(244, 67, 54, 0.8)`, 'rgba(25, 118, 210, 0.8)', 'rgba(230, 70, 127, 0.8)', 
+                'rgba(255, 214, 0, 0.8)', 'rgba(97, 218, 251, 0.8)', 'rgba(65, 184, 131, 0.8)', 
+                'rgba(2, 135, 0, 0.8)', 'rgba(86, 106, 221, 0.8)'],
         label: {
             normal: {
                 formatter: '{b}\n{d}%'
