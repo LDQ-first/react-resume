@@ -69,7 +69,7 @@ export default class Contact extends Component {
 
             return (
                 <li key={index} className="contact">
-                    <div className="title">
+                    <div className="contact-title">
                         <svg className="icon" aria-hidden="true">
                             <use xlinkHref={`#icon-${contact.icon}`}></use>
                         </svg>
@@ -93,9 +93,9 @@ export default class Contact extends Component {
                     联系方式
                   </h2>
                   <div className="contactWrap">
-                      <div className="centerArea">
-                          centerArea
-                      </div>
+                      {/*<div className="centerArea">
+                          
+                      </div>*/}
                       <ul className="contacts">
                           { contacts }
                       </ul>
