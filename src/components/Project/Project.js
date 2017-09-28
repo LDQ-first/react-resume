@@ -309,7 +309,7 @@ export default class Project extends Component {
                                     <a className="sourceCode-link"  href={project.sourceCode} target="_blank">
                                         源码
                                         <svg className="icon github" aria-hidden="true">
-                                            <use xlinkHref="#icon-github"></use>
+                                            <use xlinkHref="#icon-github1"></use>
                                         </svg>
                                     </a>
                                 </span>
