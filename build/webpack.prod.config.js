@@ -38,7 +38,12 @@ module.exports =  {
     module: {
         rules: [ {
             test: /\.(js|jsx)$/,
-            use: ['babel-loader?cacheDirectory=true', 'eslint-loader'],
+             use: [{
+                loader: 'babel-loader?cacheDirectory=true',
+                options: {
+                    plugins: ['syntax-dynamic-import']                         
+                }
+            }, 'eslint-loader'],
             include: path.join(__dirname, '../src'),
             exclude: /node_modules/
         }, 
