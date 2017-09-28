@@ -22,9 +22,12 @@ export default class Education extends Component {
         return (
             <EducationDiv>
                <div className="educationContent" ref={education => this._education = education}>
-                   <h2 className="education">
+                   <h2 className="title">
                     教育
                   </h2>
+                  <div className="education">
+                      
+                  </div>
                </div>
             </EducationDiv>
         )

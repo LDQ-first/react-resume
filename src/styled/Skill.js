@@ -67,7 +67,30 @@ const SkillDiv = styled.div`
                 }
             }
             .skillDes {
-                
+                margin: 2em 0;
+                border: 2px solid #4AE3B5;
+                box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                            0 2px 6px rgba(30, 136, 229, 0.5);
+                .mkWrap {
+                    height: 200px;
+                    overflow: hidden;
+                    &.spread {
+                        height: auto;
+                    }
+                }
+                .contorolSpread {
+                    background: #007FEF;
+                    color: #FFF;
+                    text-align: center;
+                    padding: 1em 2em;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 18px;
+                    box-shadow: 0 -2px 4px rgba( 255, 255, 255, 0.3);
+                    .anticon {
+                        margin: 0 1em; 
+                    }
+                }
             }
         }
         .i-react {
