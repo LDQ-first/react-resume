@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-
+import react from '../../static/icon/logo-react.png'
+import redux from '../../static/icon/redux.png'
 
 const ProjectDiv = styled.div`
     padding: 4em 0;
@@ -53,6 +54,16 @@ const ProjectDiv = styled.div`
               transition: 0.5s;
               &.slick-active {
                   transform: scale(1);
+              }
+              &.more {
+                  .project-item {
+                      height: 400px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      font-size: 10em;
+                      padding: 0;
+                  }
               }
               .project-item {
                   background: #FFF;
@@ -134,10 +145,38 @@ const ProjectDiv = styled.div`
                   }
                    .project-technology {
                        .technologyContents {
+                           padding: 0 0.5em;
+                           display: flex;
+                           align-items: center;
                            .technologyContent {
-                               padding: 0.5em 1em;
+                               padding: 0.5em 0.2em;
+                               text-align: left;
+                               display: flex;
+                               align-items: center;
                                .technologyContent-link {
-
+                                   width: 40px;
+                                   height: 40px;
+                                   text-align: center;
+                                   line-height: 40px;
+                                   color: #a5a7aa;
+                                   transition: all 0.6s ease-in-out;
+                                   &:hover {
+                                        background: rgba(30, 136, 229, 0.2);
+                                        border-radius: 50%;
+                                   }
+                                   .icon {
+                                       line-height: 40px;
+                                       display: block;
+                                        width: 40px;
+                                       height: 40px;
+                                       margin: 0;
+                                   }
+                                   .i-react {
+                                       background: url(${react}) 50% 50%/22px no-repeat;
+                                   }
+                                   .i-redux {
+                                       background: url(${redux}) 50% 50%/22px no-repeat;
+                                   }
                                }
                            }
                        }

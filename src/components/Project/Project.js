@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import  ProjectDiv  from '../../styled/Project.js'
 import  {Carousel} from 'antd'
-
+import { Icon } from 'antd'
+import classNames from 'classnames'
 
 export default class Project extends Component {
     static get propTypes() {
@@ -30,9 +31,13 @@ export default class Project extends Component {
                     ],
                     icon: [ 
                         { 
-                            link: ``,
-                            className: ``
-                        }
+                            link: `https://facebook.github.io/react/`,
+                            className: `i-react`
+                        },
+                        { 
+                            link: `http://redux.js.org/`,
+                            className: `i-redux`
+                        },
                     ]
                 },
                 {
@@ -53,15 +58,15 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: '',
-                    sourceCode: '',
-                    title: '',
-                    img: '',
+                    review: 'http://39.108.141.131/vueshop/#/',
+                    sourceCode: 'https://github.com/LDQ-first/Vue-shop',
+                    title: 'Vue全家桶 + Express + MongoDB 开发的简单商城',
+                    img: 'https://ldq-first.github.io/work/img/All/04.jpg',
                     content: [
-                        ``,
-                        ``,
-                        ``,
-                        ``
+                        `Vue全家桶 + Express + MongoDB + Mongoose + SASS + Axios + Echarts + Webpack`,
+                        `实现登录，注册，添加删除购物车，添加删除地址，完成订单，查看订单详情， 下拉刷新等功能`,
+                        `前后端的联系， 阿里云部署Node和MongoDB，Nginx代理转发，pm2实现快速部署和守护进程`,
+                        `阿里云 + Express + MongoDB + Nginx`
                     ],
                     icon: [
                         { 
@@ -71,14 +76,14 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: '',
-                    sourceCode: '',
-                    title: '',
-                    img: '',
+                    review: 'https://ldq-first.github.io/react-animating-resume/build/',
+                    sourceCode: 'https://github.com/LDQ-first/react-animating-resume',
+                    title: 'React.js 版的动态响应式简历',
+                    img: 'https://ldq-first.github.io/work/img/RAResume/001.jpg',
                     content: [
-                        ``,
-                        ``,
-                        ``
+                        `React.js`,
+                        `利用 Async/Await Promise 实现按步骤绘制动态简历，实现了加速、播放、暂停、跳过、重来、下载PDF等功能`,
+                        `async/await 处理异步，动态添加css，markdown`
                     ],
                     icon: [
                         { 
@@ -88,14 +93,14 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: '',
-                    sourceCode: '',
-                    title: '',
-                    img: '',
+                    review: 'https://ldq-first.github.io/vue-animating-resume/dist/',
+                    sourceCode: 'https://github.com/LDQ-first/vue-animating-resume',
+                    title: 'Vue.js 版的动态响应式简历',
+                    img: 'https://ldq-first.github.io/work/img/VAResume/001.jpg',
                     content: [
-                        ``,
-                        ``,
-                        ``
+                        `Vue.js`,
+                        `利用 Async/Await Promise 实现按步骤绘制动态简历，实现了加速、播放、暂停、跳过、重来、下载PDF等功能`,
+                        `async/await 处理异步，动态添加css，markdown`
                     ],
                     icon: [
                         { 
@@ -103,7 +108,24 @@ export default class Project extends Component {
                             className: ``
                         }
                     ]
-                }
+                },
+                {
+                    review: 'http://ldq-first.github.io/frame-Tic-Tac-Toe/',
+                    sourceCode: 'https://github.com/LDQ-first/frame-Tic-Tac-Toe',
+                    title: '使用ES5写的框架井字棋大战',
+                    img: 'https://ldq-first.github.io/work/img/All/05.jpg',
+                    content: [
+                        `ES5(原生JS)`,
+                        `实现选择作战框架，判定平局，胜败等功能`,
+                        `胜负的判定`
+                    ],
+                    icon: [
+                        { 
+                            link: ``,
+                            className: ``
+                        }
+                    ]
+                },
             ]
         }
     }
@@ -122,44 +144,51 @@ export default class Project extends Component {
 
         const projects = projectArr.map((project, index) => {
 
-            const contents = project.content.map((content, i) => {
-                return (
-                    <li key={i} className="detailContent">
-                        { 
-                            i === 0 ? 
-                            <p className="detailContent-p">
-                                <span className="detailContent-p-title">技术栈：</span>
-                                { content }
-                            </p> : 
-                            i === 1 ? 
-                            <p className="detailContent-p">
-                                <span className="detailContent-p-title">内容：</span>
-                                { content }
-                            </p> : 
-                            i === 2 ?
-                            <p className="detailContent-p">
-                                <span className="detailContent-p-title">难点：</span>
-                                { content }
-                            </p> :
-                            i === 3 ?
-                            <p className="detailContent-p">
-                                <span className="detailContent-p-title">部署：</span>
-                                { content }
-                            </p> : null
-                        }
-                    </li>
-                )
-            })
+            let contents = null
+            if( project.content && project.content instanceof Array ) {
+                 contents = project.content.map((content, i) => {
+                    return (
+                        <li key={i} className="detailContent">
+                            { 
+                                i === 0 ? 
+                                <p className="detailContent-p">
+                                    <span className="detailContent-p-title">技术栈：</span>
+                                    { content }
+                                </p> : 
+                                i === 1 ? 
+                                <p className="detailContent-p">
+                                    <span className="detailContent-p-title">内容：</span>
+                                    { content }
+                                </p> : 
+                                i === 2 ?
+                                <p className="detailContent-p">
+                                    <span className="detailContent-p-title">难点：</span>
+                                    { content }
+                                </p> :
+                                i === 3 ?
+                                <p className="detailContent-p">
+                                    <span className="detailContent-p-title">部署：</span>
+                                    { content }
+                                </p> : null
+                            }
+                        </li>
+                    )
+                })
+             }
 
-            const technologys = project.icon.map((icon, j) => {
-                return (
-                    <li key={j} className="technologyContent">
-                        <a href={ icon.link } className="technologyContent-link">
-                            <i className={ icon.className }></i>
-                        </a>
-                    </li>
-                )
-            })
+            let technologys = null
+            if(project.icon && project.icon instanceof Array) {
+                 technologys = project.icon.map((icon, j) => {
+                    return (
+                        <li key={j} className="technologyContent">
+                            <a href={ icon.link } className="technologyContent-link"
+                            target="_blank" rel="noopener noreferrer">
+                                <i className={classNames(`icon`, icon.className)}></i>
+                            </a>
+                        </li>
+                    )
+                })
+            }
 
 
             return (
@@ -191,13 +220,13 @@ export default class Project extends Component {
                             </header>
                             <div className="detail-content">
                                 <ul className="detailContents">
-                                    { contents }
+                                    { contents ? contents : null }
                                 </ul>
                             </div>
                         </div>
                         <div className="project-technology">
                             <ul className="technologyContents">
-                                { technologys }
+                                { technologys ? technologys : null }
                             </ul>
                         </div>
                     </div>
@@ -214,6 +243,14 @@ export default class Project extends Component {
                   <div className="projects">
                       <Carousel>
                         { projects }
+                        <div className="project more">
+                            <div className="project-item">
+                                <a className="moreLink" href="http://ldq-first.github.io/work/" title="更多" 
+                                target="_blank" rel="noopener noreferrer">                   
+                                    <Icon type="plus" />
+                                </a>
+                            </div>
+                        </div>
                         {/*<div className="project">
                             <div className="project-item">
                                 

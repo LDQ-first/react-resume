@@ -21,7 +21,7 @@ export default class Bio extends Component {
                 {
                     name: '学历',
                     icon: 'jiaoyu01',
-                    content: ['广东工业大学', '本科', '计算机科学与技术', '英语四级'] 
+                    content: ['广东工业大学', '本科(2018届)', '计算机科学与技术', '英语四级'] 
                 },
                 {   
                     name: '手机',
