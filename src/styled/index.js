@@ -7,6 +7,11 @@ const mainBlue = blue[500]
 const svgBlue = blue[600]
 
 
+
+
+
+
+
 export default injectGlobal`
     * {
         margin: 0;
@@ -97,6 +102,7 @@ export default injectGlobal`
            /* border-color: #50C28B;*/
         }
     }
+    
     svg {
         fill: ${svgBlue} !important;
     }
