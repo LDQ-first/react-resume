@@ -5,6 +5,9 @@ const MKPre = styled.pre`
         color: #FFF;
         background: #272822;
         padding: 2em;
+        * {
+           white-space: pre-line;
+        }
         h2 {
             color: #007FEF;
         }
