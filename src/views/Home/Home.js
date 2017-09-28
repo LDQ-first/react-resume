@@ -13,6 +13,7 @@ import Project from '../../components/Project/Project.js'
 import Skill from '../../components/Skill/Skill.js'
 import Education from '../../components/Education/Education.js'
 import Contact from '../../components/Contact/Contact.js'
+import Footer from '../../components/Footer/Footer.js'
 import { toJS } from 'immutable'
 
 
@@ -135,10 +136,7 @@ class Home extends Component {
                 <Skill _this={this} />
                 <Education _this={this} />
                 <Contact _this={this} />
-                <div className="home">
-                    others
-
-                </div>
+                <Footer  _this={this} />
             </HomeDiv>
         )
     }
