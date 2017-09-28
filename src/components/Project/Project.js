@@ -38,6 +38,30 @@ export default class Project extends Component {
                             link: `http://redux.js.org/`,
                             className: `i-redux`
                         },
+                        { 
+                            link: `https://reacttraining.com/react-router/`,
+                            className: `i-react-router`
+                        },
+                        { 
+                            link: `https://facebook.github.io/immutable-js/`,
+                            className: `i-immutable`
+                        },
+                        { 
+                            link: `http://www.material-ui.com/#/`,
+                            className: `i-material-ui`
+                        },
+                        { 
+                            link: `https://www.styled-components.com/`,
+                            className: `i-styled-components`
+                        },
+                        { 
+                            link: `http://es6.ruanyifeng.com/`,
+                            className: `i-es6`
+                        },
+                        { 
+                            link: `https://webpack.github.io/`,
+                            className: `i-webpack`
+                        },
                     ]
                 },
                 {
@@ -52,9 +76,21 @@ export default class Project extends Component {
                     ],
                     icon: [
                         { 
-                            link: ``,
-                            className: ``
-                        }
+                            link: `https://cn.vuejs.org/`,
+                            className: `i-vue`
+                        },
+                        { 
+                            link: `http://www.sass.hk/`,
+                            className: `i-sass`
+                        },
+                        { 
+                            link: `http://es6.ruanyifeng.com/`,
+                            className: `i-es6`
+                        },
+                        { 
+                            link: `https://webpack.github.io/`,
+                            className: `i-webpack`
+                        },
                     ]
                 },
                 {
@@ -70,9 +106,33 @@ export default class Project extends Component {
                     ],
                     icon: [
                         { 
-                            link: ``,
-                            className: ``
-                        }
+                            link: `https://cn.vuejs.org/`,
+                            className: `i-vue`
+                        },
+                        { 
+                            link: `http://www.sass.hk/`,
+                            className: `i-sass`
+                        },
+                        { 
+                            link: `http://es6.ruanyifeng.com/`,
+                            className: `i-es6`
+                        },
+                        { 
+                            link: `https://webpack.github.io/`,
+                            className: `i-webpack`
+                        },
+                        { 
+                            link: `https://nodejs.org/en/`,
+                            className: `i-node`
+                        },
+                        { 
+                            link: `https://www.mongodb.com/`,
+                            className: `i-mongoDB`
+                        },
+                        { 
+                            link: `http://echarts.baidu.com/`,
+                            className: `i-echarts`
+                        },
                     ]
                 },
                 {
@@ -86,10 +146,26 @@ export default class Project extends Component {
                         `async/await 处理异步，动态添加css，markdown`
                     ],
                     icon: [
+                         { 
+                            link: `https://facebook.github.io/react/`,
+                            className: `i-react`
+                        },
                         { 
-                            link: ``,
-                            className: ``
-                        }
+                            link: `https://www.styled-components.com/`,
+                            className: `i-styled-components`
+                        },
+                        { 
+                            link: `http://es6.ruanyifeng.com/`,
+                            className: `i-es6`
+                        },
+                        { 
+                            link: `http://www.appinn.com/markdown/`,
+                            className: `i-markdown`
+                        },
+                        { 
+                            link: `https://webpack.github.io/`,
+                            className: `i-webpack`
+                        },
                     ]
                 },
                 {
@@ -104,9 +180,25 @@ export default class Project extends Component {
                     ],
                     icon: [
                         { 
-                            link: ``,
-                            className: ``
-                        }
+                            link: `https://cn.vuejs.org/`,
+                            className: `i-vue`
+                        },
+                        { 
+                            link: `http://www.sass.hk/`,
+                            className: `i-sass`
+                        },
+                        { 
+                            link: `http://es6.ruanyifeng.com/`,
+                            className: `i-es6`
+                        },
+                        { 
+                            link: `http://www.appinn.com/markdown/`,
+                            className: `i-markdown`
+                        },
+                        { 
+                            link: `https://webpack.github.io/`,
+                            className: `i-webpack`
+                        },
                     ]
                 },
                 {
@@ -121,8 +213,8 @@ export default class Project extends Component {
                     ],
                     icon: [
                         { 
-                            link: ``,
-                            className: ``
+                            link: `https://developer.mozilla.org/en-US/docs/Web/JavaScript`,
+                            className: `i-js`
                         }
                     ]
                 },
