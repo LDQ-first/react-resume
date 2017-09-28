@@ -34,7 +34,7 @@ export default class Skill extends Component {
                   </h2>
                   <div className="skill">
                       <PieReact option={ pieOption }/>
-                  </div>
+                  </div> 
                </div>
             </SkillDiv>
         )
