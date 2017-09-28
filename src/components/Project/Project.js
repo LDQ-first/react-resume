@@ -130,6 +130,10 @@ export default class Project extends Component {
                             className: `i-mongoDB`
                         },
                         { 
+                            link: `http://nginx.org/`,
+                            className: `i-nginx`
+                        },
+                        { 
                             link: `http://echarts.baidu.com/`,
                             className: `i-echarts`
                         },

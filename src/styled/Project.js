@@ -14,7 +14,7 @@ import markdown from '../../static/icon/markdown.png'
 import js from '../../static/icon/js.png'
 import node from '../../static/icon/node.png'
 import mongoDB from '../../static/icon/mongo.png' 
-
+import nginx from '../../static/icon/nginx.png'
 
 
 const ProjectDiv = styled.div`
@@ -162,6 +162,7 @@ const ProjectDiv = styled.div`
                        .technologyContents {
                            padding: 0 0.5em;
                            display: flex;
+                           flex-wrap: wrap;
                            align-items: center;
                            background: #607D8B;
                            .technologyContent {
@@ -231,6 +232,9 @@ const ProjectDiv = styled.div`
                                    }
                                    .i-mongoDB {
                                        background: url(${mongoDB}) 50% 50%/22px no-repeat;
+                                   }
+                                   .i-nginx {
+                                       background: url(${nginx}) 50% 50%/22px no-repeat;
                                    }
                                    
                                }
