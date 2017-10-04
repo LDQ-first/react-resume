@@ -72,7 +72,7 @@ export default class Contact extends Component {
             return (
                 <li key={index} className="contact">
                     <div className="contact-title">
-                        <svg className="icon" aria-hidden="true">
+                        <svg className={`icon ${contact.icon}`} aria-hidden="true">
                             <use xlinkHref={`#icon-${contact.icon}`}></use>
                         </svg>
                         <span className="name">{contact.name}</span>
