@@ -29,6 +29,7 @@ const EducationDiv = styled.div`
                             height: 4em;
                             border: 2px solid #009688;
                             fill: #009688 !important;
+                            border-radius: 50%;
                         }
                     }
                     .time {

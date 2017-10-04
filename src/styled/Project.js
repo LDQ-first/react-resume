@@ -26,16 +26,16 @@ const ProjectDiv = styled.div`
         .title {
             max-width: 900px;
             margin: 0 auto;
-            margin-bottom: 240px;
+            margin-bottom: 4em;
             text-align: center;
             color: #FFF;
             font-size: 20px;
         }
         .projects {
             .ant-carousel {
-                width: 500px;
+                width: 550px;
                 margin: 0 auto;
-                @media (max-width: 415px) {
+                @media (max-width: 600px) {
                     width: 100%;
                 }
             }
@@ -67,6 +67,12 @@ const ProjectDiv = styled.div`
               padding: 0 2em;
               transform: scale(0.85);
               transition: 0.5s;
+              @media (max-width: 768px) {
+                padding: 0 1em;
+              }
+              @media (max-width: 415px) {
+                padding: 0 8px;
+              }
               &.slick-active {
                   transform: scale(1);
               }
@@ -80,35 +86,130 @@ const ProjectDiv = styled.div`
                       padding: 0;
                   }
               }
+             
               .project-item {
                   background: #FFF;
                   font-size: 16px;
                   position: relative;
-                  padding-top: 100px;
+                  transition: all 0.5s ease;
                   box-shadow: 0 0 4px 2px rgba(31, 150, 255, 0.2), 
                               0 2px 6px 2px rgba(0, 132, 248, 0.3), 
-                              0px 10px 30px  rgba(0, 0, 0, 0.19),
+                              0px 10px 20px  rgba(0, 0, 0, 0.19),
                               0px 6px 10px rgba(0, 0, 0, 0.23);
+                 &:hover {
+                    transform: translate3d(0, -5px, 0);
+                    box-shadow: 0 0 6px 8px rgba(31, 150, 255, 0.2), 
+                                0px 8px 12px 12px rgba(0, 132, 248, 0.3), 
+                                0px 10px 20px 6px rgba(0, 0, 0, 0.19),
+                                0px 12px 10px 10px rgba(0, 0, 0, 0.23);
+                 }
                   .img {
-                      height: 320px;
-                      width: 90%;
-                      position: absolute;
-                      left: 50%;
-                      margin-left: -45%;
-                      top: -120px;
-                      box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.5);
-                      transition: all 0.3s ease-in-out;
-                      &:hover {
-                          transform: translate3d(0, -30%, 0);
-                      }
-                  }
+                    height: 300px;
+                    width: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    /* position: absolute;
+                    left: 50%;
+                    margin-left: -45%;
+                    top: -120px;*/
+                    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.5);
+                    transition: all 0.3s ease-in-out;
+                    @media (max-width: 415px) {
+                        height: 260px;
+                    }
+                    &:hover {
+                        /*transform: translate3d(0, -30%, 0);*/
+                        .overlay {
+                            opacity: 1;
+                            &:before {
+                                opacity: 1;
+                                transform: rotate3d(0,0,1,74deg);  
+                            }
+                            .overlay-title {
+                               opacity: 1;
+                                transform: scale(1);
+                            }
+                            .overlay-content {
+                                .link {
+                                    opacity: 1;
+                                    transform: translate3d(0,0,0);
+                                    &:first-child {
+                                        
+                                    }
+                                    &:nth-child(2) {
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.4);
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 300%;
+                            background: rgba(255, 255, 255, 0.6);
+                            transition: all 0.45s ease;
+                            transform: rotate3d(0, 0, 1, 100deg);
+                            transform-origin: 0 100%;
+                        }
+                        .overlay-title {
+                            opacity: 0;
+                            transition: all 0.35s ease;
+                            transform: scale(0);
+                            position: absolute;
+                            top: 1em;
+                            left: 1em;
+                            color: #FFF;
+                            text-shadow: 0 0 5px rgba(0, 132, 248, 1),
+                                         0 1px 5px rgba(0, 132, 248, 1),
+                                         0 2px 5px rgba(0, 132, 248, 1),
+                                         0 3px 5px rgba(0, 132, 248, 1);
+                        }
+                        .overlay-content {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            padding: 2em 3em;
+                            @media (max-width: 415px) {
+                               padding: 1em 2em;
+                            }
+                            .link {
+                                opacity: 0;
+                                transition: all 0.35s ease;
+                                transform: translate3d(0, 50px, 0);
+                                margin: 0 1em;
+                                &:first-child {
+                                    transition-delay: 0.25s;
+                                }
+                                &:nth-child(2) {
+                                    transition-delay: 0.2s;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                 
+                  
                   .project-detail {
                       padding: 1em;
                       position: relative;
                       z-index: 100;
                       background: #FFF;
                       border-bottom: 2px solid #CCC;
-                      &::before {
+                      /*&::before {
                           content: '';
                           width: 100%;
                           height: 30px;
@@ -117,8 +218,8 @@ const ProjectDiv = styled.div`
                           top: -10px;
                           left: 0;
                           box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.5);
-                          /*border-radius: 0 0 0 0 / 0 0 0 0;*/
-                      }
+                          
+                      }*/
                       .header {
                           text-align: left;
                           border-bottom: 2px solid #4AE3B5;
@@ -127,12 +228,14 @@ const ProjectDiv = styled.div`
                              margin-left: 0.5em;
                           }
                           .detail-title {
+                              font-size: 16px;
                               .detail-title-link {
                                   
                               }
                               
                           }
                           .sourceCode {
+                              font-size: 14px;
                               .sourceCode-link {
                                   
                               }
@@ -147,6 +250,7 @@ const ProjectDiv = styled.div`
                                   margin: 1em 0;
                                   text-align: left;
                                   .detailContent-p {
+                                      font-size: 14px;
                                       .detailContent-p-title {
                                           font-weight: bold;
                                           color: #1E88E5;

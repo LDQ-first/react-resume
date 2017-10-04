@@ -298,12 +298,27 @@ export default class Project extends Component {
                              style={{
                                 background: `url(${project.img}) no-repeat center/cover`
                          }}>
+                            <div className="overlay">
+                               <h3 className="overlay-title">{ project.title }</h3>
+                                <p className="overlay-content">
+                                    <a className="detail-title-link link" href={project.review} target="_blank">
+                                        <svg className="icon" aria-hidden="true">
+                                            <use xlinkHref="#icon-lianjie"></use>
+                                        </svg>
+                                    </a>
+                                    <a className="sourceCode-link link"  href={project.sourceCode} target="_blank">
+                                        <svg className="icon github" aria-hidden="true">
+                                            <use xlinkHref="#icon-github1"></use>
+                                        </svg>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                         <div className="project-detail">
                             <header className="header">
                                 <h3 className="detail-title">
                                     <a className="detail-title-link" href={project.review} target="_blank">
-                                        {project.title}
+                                        { project.title }
                                         <svg className="icon" aria-hidden="true">
                                             <use xlinkHref="#icon-lianjie"></use>
                                         </svg>

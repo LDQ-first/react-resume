@@ -88,7 +88,6 @@ export default injectGlobal`
         vertical-align: middle;
         fill: #2196F3;
         overflow: hidden;
-        border-radius: 50%;
         padding: 2px;
         margin-right: 3px;
         cursor: pointer;
