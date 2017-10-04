@@ -92,11 +92,17 @@ class Home extends Component {
              this._scroll(scrollToJS[index])
          }
          if(index === -1) {
-             this._scroll(0)
+             this._scroll(0, false)
          }
     }
 
-    _scroll (top) {
+    _scroll (top, isAnimated = true) {
+        if(!isAnimated) {
+            setTimeout(() => {
+                document.body.scrollTop = 0
+            }, 0)
+        }
+
 
         const timer = setInterval(() => {
             const b = document.body
