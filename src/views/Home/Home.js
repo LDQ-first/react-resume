@@ -39,16 +39,28 @@ class Home extends Component {
     }
 
     
+    
     componentWillMount() {
-        
+
     }
+
+    
+    componentDidMount() {
+        /* console.log(document.body.scrollTop)*/
+         this._chooseNav(-1, false)       
+    }
+    
+ 
+    
 
     _changeNavIndex() {
         const b = document.body
+      //  console.log(Math.ceil(b.scrollTop))
+
         const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
         const scrollToJS = scroll.toJS() 
 
-        if(Math.ceil(b.scrollTop) < scrollToJS[1] - 125 ) {
+        if(Math.ceil(b.scrollTop) < scrollToJS[1] - 110 ) {
             console.log(0)
              this._chooseNav(0, false)
              return 
@@ -56,8 +68,9 @@ class Home extends Component {
         
         for(let i = 1; i < scrollToJS.length; i++ ) {
             const top = scrollToJS[i]
-          //    console.log(Math.ceil(b.scrollTop), top - 125 - 22, top - 125 + 22)
-            if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ) {
+            //  console.log(Math.ceil(b.scrollTop), top - 110 - 22, top - 110 + 22)
+              
+            if( Math.ceil(b.scrollTop) >= top - 110 - 66 && Math.ceil(b.scrollTop) <= top - 110 + 66 ) {
                console.log(i)
                this._chooseNav(i, false)
                 break;
@@ -78,22 +91,27 @@ class Home extends Component {
              const scrollToJS = scroll.toJS()
              this._scroll(scrollToJS[index])
          }
-         
+         if(index === -1) {
+             this._scroll(0)
+         }
     }
 
     _scroll (top) {
+
         const timer = setInterval(() => {
             const b = document.body
-         //    console.log(Math.ceil(b.scrollTop), top - 125)
+         //    console.log(Math.ceil(b.scrollTop), top - 110)
+
             if( b.scrollTop === 0 && top === 0) {
+                this._chooseNav(0, false)
                  clearInterval(timer)
             }
-            else if( Math.ceil(b.scrollTop) > top - 125 ) {
+            else if( Math.ceil(b.scrollTop) > top - 110 ) {
                  b.scrollTop -= 22
             } 
-            else if( Math.ceil(b.scrollTop) >= top - 125 - 22 && Math.ceil(b.scrollTop) <= top - 125 + 22 ||
+            else if( Math.ceil(b.scrollTop) >= top - 110 - 22 && Math.ceil(b.scrollTop) <= top - 110 + 22 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
-               b.scrollTop = top - 125
+               b.scrollTop = top - 110
                 clearInterval(timer)
             } 
             else {

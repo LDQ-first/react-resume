@@ -39,12 +39,14 @@ export default class Contact extends Component {
         }
     } 
 
-     componentDidMount() {
-         const {_this} = this.props
+
+    componentDidUpdate(prevProps, prevState) {
+          const {_this} = this.props
          /*console.log(this._contact)
          console.log(this._contact.offsetTop)*/
          _this._setTopData(5, this._contact.offsetTop)
     }
+    
     
 
     render() {

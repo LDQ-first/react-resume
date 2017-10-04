@@ -226,7 +226,11 @@ export default class Project extends Component {
         }
     }
 
-     componentDidMount() {
+
+
+
+    
+    componentDidUpdate(prevProps, prevState) {
          const {_this} = this.props
          /*console.log(this._project)
          console.log(this._project.offsetTop)*/

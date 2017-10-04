@@ -9,12 +9,14 @@ export default class Education extends Component {
         }
     }
 
-     componentDidMount() {
-         const {_this} = this.props
+
+    componentDidUpdate(prevProps, prevState) {
+          const {_this} = this.props
          /*console.log(this._education)
          console.log(this._education.offsetTop)*/
          _this._setTopData(4, this._education.offsetTop)
     }
+    
     
 
     render() {

@@ -47,12 +47,14 @@ export default class Bio extends Component {
         }
     } 
 
-    componentDidMount() {
-         const {_this} = this.props
+
+    componentDidUpdate(prevProps, prevState) {
+           const {_this} = this.props
         /* console.log(this._bio)
          console.log(this._bio.offsetTop)*/
          _this._setTopData(1, this._bio.offsetTop)
     }
+    
     
 
     render() {

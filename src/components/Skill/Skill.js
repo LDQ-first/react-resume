@@ -139,12 +139,16 @@ export default class Skill extends Component {
         }
     }
 
-     componentDidMount() {
-         const {_this} = this.props
-         /*console.log(this._skill)
-         console.log(this._skill.offsetTop)*/
+    
+    componentDidUpdate(prevProps, prevState) {
+          const {_this} = this.props
+        /* console.log(this._skill)*/
+       /*  console.log(this._skill.offsetTop)*/
          _this._setTopData(3, this._skill.offsetTop)
     }
+
+    
+    
     
     _skillDes() {
           const { Des } = this.state

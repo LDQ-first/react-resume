@@ -71,6 +71,8 @@ const NavDiv = styled.div`
                 color: rgba(255, 255, 255, 0.8);
                 cursor: pointer;
                 position: relative;
+                display: flex;
+                align-items: center;
                 &::before {
                     content: "";
                     position: absolute;

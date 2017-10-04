@@ -23,6 +23,7 @@ export default injectGlobal`
         overflow: auto;
     }
     body {
+        font-size: 14px;
         height: 100vh;
         line-height: 1.6;
         min-width: 320px;
