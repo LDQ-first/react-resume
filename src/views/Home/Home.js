@@ -61,7 +61,7 @@ class Home extends Component {
         const scrollToJS = scroll.toJS() 
 
         if(Math.ceil(b.scrollTop) < scrollToJS[1] - 110 ) {
-            console.log(0)
+           /* console.log(0)*/
              this._chooseNav(0, false)
              return 
         }
@@ -71,7 +71,7 @@ class Home extends Component {
             //  console.log(Math.ceil(b.scrollTop), top - 110 - 22, top - 110 + 22)
               
             if( Math.ceil(b.scrollTop) >= top - 110 - 66 && Math.ceil(b.scrollTop) <= top - 110 + 66 ) {
-               console.log(i)
+               /*console.log(i)*/
                this._chooseNav(i, false)
                 break;
             } 
@@ -129,7 +129,13 @@ class Home extends Component {
         
     }
 
-
+    _resetComTop() {
+        if( this._education && this._contact) {
+            this._setTopData(4, this._education._education.offsetTop)
+            this._setTopData(5, this._contact._contact.offsetTop)
+        }
+        
+    }
 
     
     
@@ -152,8 +158,8 @@ class Home extends Component {
                 <Bio _this={this} />
                 <Project _this={this} />
                 <Skill _this={this} />
-                <Education _this={this} />
-                <Contact _this={this} />
+                <Education _this={this} ref={education => this._education = education} />
+                <Contact _this={this} ref={contact => this._contact = contact} />
                 <Footer  _this={this} />
             </HomeDiv>
         )

@@ -145,6 +145,7 @@ export default class Skill extends Component {
         /* console.log(this._skill)*/
        /*  console.log(this._skill.offsetTop)*/
          _this._setTopData(3, this._skill.offsetTop)
+         _this._resetComTop()
     }
 
     
@@ -158,11 +159,16 @@ export default class Skill extends Component {
     }
 
     _contorolSpread () {
-        const { isSpread } = this.state
+        const { isSpread  } = this.state
+        
         this.setState({
             isSpread: !isSpread
         })
+       
     }
+
+    
+
 
     render() {
 

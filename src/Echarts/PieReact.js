@@ -23,17 +23,22 @@ export default class PieReact extends Component {
   }
   
   initPie() {
+    if(this.myCharts) {
+    /*  console.log(this.myCharts)*/
+      echarts.dispose(this.myCharts)
+    }
     const { option = { } } = this.props //外部传入的data数据
-    let myChart = echarts.init(this.ID) //初始化echarts
+    this.myCharts = echarts.init(this.ID) //初始化echarts
 
     //设置options
-    myChart.setOption(option)
-    window.onresize = function() {
-      myChart.resize()
+    this.myCharts.setOption(option)
+    window.onresize = () => {
+      this.myCharts.resize()
     }
   }
   
   componentDidMount() {
+    
     this.initPie()
   }
   
