@@ -51,6 +51,7 @@ const ContactDiv = styled.div`
                             font-size: 5em;
                             vertical-align: bottom;
                             border-radius: 0;
+                            margin-right: 0;
                             &.shouji {
                                 fill: #FA7363 !important;
                             }
@@ -66,7 +67,6 @@ const ContactDiv = styled.div`
                             font-size: 20px;
                         }
                         @media (max-width: 768px) {
-                            margin-right: 0.5em;
                             .icon {
                                 font-size: 4em;
                             }

@@ -56,10 +56,10 @@ const FooterDiv = styled.div`
             &::after {
                 content: '';
                 position: absolute;
-                width: 80%;
+                width: calc(100% - 60px);
                 height: 4px;
                 background: rgba(255, 255, 255, 0.5);
-                left: calc(48% + 40px);
+                left: calc(50% + 30px);
                 top: 60%;
                 margin-top: -2px;
             }
