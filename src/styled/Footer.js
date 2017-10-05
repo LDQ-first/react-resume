@@ -47,10 +47,35 @@ const FooterDiv = styled.div`
         
     }
     .otherLinks {
-        margin-top: 2em;
+        margin-top: 4em;
         display: flex;
         justify-content: space-around;
         .otherLink {
+            flex: 1;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 80%;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.5);
+                left: calc(48% + 40px);
+                top: 60%;
+                margin-top: -2px;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+            .otherLink-link {
+                position: relative;
+                top: 0;
+                left: 50%;
+                margin-left: -20px;
+                z-index: 10;
+                display: inline-block;
+            }
             .icon {
                 font-size: 24px;
                 border-radius: 0;

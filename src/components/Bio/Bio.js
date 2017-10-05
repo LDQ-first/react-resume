@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import  BioDiv  from '../../styled/Bio.js'
+import { moveFunc, leaveFunc }  from '../../utils/3dHover.js'
 
 export default class Bio extends Component {
     static get propTypes() {
@@ -104,11 +105,15 @@ export default class Bio extends Component {
                   </h2>
                   <div className="bio">
                       <div className="avatarWrap">
-                          <div className="avatarContent">
+                          <div className="avatarContent" 
+                          onMouseMove={ (e) => moveFunc(e) }
+                          onMouseLeave={ (e) => leaveFunc(e) } >
                              <div className="avatar" title="刘德铨"></div>
-                             <div className="content">
-                                <h2 className="name">刘德铨</h2>
-                                <p className="job">前端工程师</p>
+                             <div className="avatar-content" >
+                                <div className="name-job">
+                                      <h2 className="name">刘德铨</h2>
+                                      <p className="job">前端工程师</p>
+                                </div>
                              </div>
                           </div>
                       </div>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ldq from '../../static/img/ldq.jpg'
 
 const BioDiv = styled.div`
      background: #FFF;
@@ -28,25 +29,46 @@ const BioDiv = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                perspective: 1000px;
                 box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
                             0 2px 6px rgba(30, 136, 229, 0.5);
                 .avatarContent {
+                    cursor: pointer;
+                    position: relative;
+                    transition: transform 0.1s;
                     box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
-                                0 2px 6px rgba(30, 136, 229, 0.5);
+                                0 0 10px rgba(30, 136, 229, 0.4),
+                                0 4px 12px rgba(30, 136, 229, 0.5);
                     .avatar {
-                        outline: 1px solid red;
-                        width: 134px;
-                        height: 150px;
-                    /*   background: url(../../static/img/ldq.jpg) no-repeat 0 0/cover; */
+                        width: 161px;
+                        height: 200px;
+                        background: url(${ldq}) no-repeat 0 0/cover; 
                     }
-                    .content {
+                    .avatar-content {
                         text-align: center;
                         padding: 1em;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        .name-job {
+                            transition: transform 0.1s;
+                            transform: translate3d(0px, 0px, 0px);
+                            margin-bottom: 0.2em;
+                            text-shadow: 0 0 5px rgba(0, 132, 248, 1),
+                                         0 1px 5px rgba(0, 132, 248, 1);
+                        }
                         .name {
-
+                            color: #FFF;
                         }
                         .job {
-
+                            color: #FFF;
+                            font-size: 16px;
                         }
                     }
                 }
@@ -65,7 +87,7 @@ const BioDiv = styled.div`
                     text-indent: 0.5em;
                 }
                 .infos {
-
+                    font-size: 16px;
                     .info {
                         display: flex;
                         margin: 1em;
@@ -93,6 +115,7 @@ const BioDiv = styled.div`
                         0 2px 6px rgba(30, 136, 229, 0.5);
             border-left: 8px solid rgba(30, 136, 229, 1);
             padding: 1em;
+            font-size: 16px;
             @media (max-width: 768px) {
                margin: 0 2em;
             }

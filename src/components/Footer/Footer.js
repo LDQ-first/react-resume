@@ -36,7 +36,7 @@ export default class Footer extends Component {
         const otherLinks = others.map((other, index) => {
             return (
                 <li key={ index } className="otherLink">
-                   <a href={other.link} target="_blank">
+                   <a className="otherLink-link" href={other.link} target="_blank">
                         <svg className="icon" aria-hidden="true">
                             <use xlinkHref={`#icon-${other.icon}`}></use>
                         </svg>
