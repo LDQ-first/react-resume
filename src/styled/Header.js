@@ -43,7 +43,7 @@ const HeaderDiv = styled.div`
             }
             @keyframes even {
                0% {
-                    transform: scale3d(1, 1, 1)
+                    transform: scaleX(1);
                 }
                 100% {
                     transform: scale3d(1.2, 1.2, 1.2)
@@ -54,7 +54,7 @@ const HeaderDiv = styled.div`
                     transform: translate(0)
                 }
                 100% {
-                    transform: translate(5%, 2%)
+                    transform: translate(-5%, -2%)
                 }
             }
         }    
