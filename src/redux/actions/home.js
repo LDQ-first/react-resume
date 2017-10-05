@@ -12,13 +12,8 @@ export const chooseNav = (index) => {
     }
 }
 
-export const chooseNavIndex = (index) => (dispatch) => {
-    dispatch(chooseNav(index))
-    /*switch(index) {
-        case '0':
-            
-            break
-    }*/
+export const chooseNavIndex = (index) => async (dispatch) => {
+    await dispatch(chooseNav(index))
 }
 
 
@@ -32,8 +27,7 @@ export const setTop = (index, top) => {
     }
 }
 
-export const setTopData = (index, top) => (dispatch) => {
-     
-     dispatch(setTop(index, top))
+export const setTopData = (index, top) => async (dispatch) => {
+     await dispatch(setTop(index, top))
 }
 

@@ -5,7 +5,7 @@ const path = require('path')
 module.exports = {
     entry: {
         vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux',
-         'react-router-redux', 'prop-types', 'history', 'axios', 'styled-components', 
+         'react-router-redux', 'prop-types', 'history', 'styled-components', 
          'redux-thunk']
     },
     output: {
