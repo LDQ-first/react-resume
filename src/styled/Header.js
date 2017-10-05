@@ -65,6 +65,7 @@ const HeaderDiv = styled.div`
         text-align: center;
         .title {
             color: #EEE;
+            margin-bottom: 1em;
              text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9,
                     0 3px 0 #bbb, 0 4px 0 #b9b9b9,
                     0 0 5px rgba(0,0,0,0.1),
@@ -74,7 +75,7 @@ const HeaderDiv = styled.div`
             } 
         }
         .job {
-
+            color: #EEE;
         }
     }
 
