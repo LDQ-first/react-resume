@@ -17,7 +17,7 @@ export default class Project extends Component {
         this.state = {
             projectArr: [
                 {
-                    review: 'http://ldq-first.github.io/react-eyepetizer/dist/',
+                    review: 'http://ldq-first.github.io/react-eyepetizer/dist/#/',
                     sourceCode: 'https://github.com/LDQ-first/react-eyepetizer',
                     title: 'React全家桶版开眼',
                     img: 'https://ldq-first.github.io/work/img/All/02.jpg',
@@ -140,7 +140,7 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'https://ldq-first.github.io/react-animating-resume/build/',
+                    review: 'https://ldq-first.github.io/react-animating-resume/build/#/',
                     sourceCode: 'https://github.com/LDQ-first/react-animating-resume',
                     title: 'React.js 版的动态响应式简历',
                     img: 'https://ldq-first.github.io/work/img/RAResume/001.jpg',
@@ -173,7 +173,7 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'https://ldq-first.github.io/vue-animating-resume/dist/',
+                    review: 'https://ldq-first.github.io/vue-animating-resume/dist/#/',
                     sourceCode: 'https://github.com/LDQ-first/vue-animating-resume',
                     title: 'Vue.js 版的动态响应式简历',
                     img: 'https://ldq-first.github.io/work/img/VAResume/001.jpg',
