@@ -1,10 +1,8 @@
 import {injectGlobal} from 'styled-components'
 import styled from 'styled-components'
-import { lightBlue, deepPurple, blue } from 'material-ui/colors'
-const bgBlue = lightBlue[400]
-const bgPurple = deepPurple[200]
-const mainBlue = blue[500]
-const svgBlue = blue[600]
+const bgBlue = '#29b6f6'
+const bgPurple = '#b39ddb'
+const svgBlue = '#1e88e5'
 
 
 

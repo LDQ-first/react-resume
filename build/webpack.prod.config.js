@@ -84,7 +84,7 @@ module.exports =  {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10000,
+                            limit: 10240,
                             name: '/static/img/[name].[sha512:hash:base64:7].[ext]',
                             minimize: true //压缩
                         }
