@@ -5,8 +5,6 @@ export const moveFunc = (e) => {
     const b = document.body,
           _this = e.currentTarget,
           nameJob = document.querySelector('.name-job'),
-          offsetLeft = _this.offsetLeft,
-          offsetTop = _this.offsetTop,
           x = e.pageX - _this.getBoundingClientRect().left,
           y = e.pageY - _this.getBoundingClientRect().top - b.scrollTop,
           centerX = _this.offsetWidth / 2,
