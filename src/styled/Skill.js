@@ -39,7 +39,7 @@ const SkillDiv = styled.div`
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: center;
-                background: #607D8B;
+                background: #004b6d;
                 .technologyContent {
                     padding: 0.5em 0.2em;
                     text-align: left;
@@ -53,7 +53,8 @@ const SkillDiv = styled.div`
                         color: #a5a7aa;
                         transition: all 0.6s ease-in-out;
                         &:hover {
-                            background: rgba(30, 136, 229, 0.8);
+                           /* background: rgba(30, 136, 229, 0.8);*/
+                            background: #39719a;
                             border-radius: 50%;
                         }
                         .icon {

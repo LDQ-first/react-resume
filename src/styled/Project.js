@@ -33,9 +33,9 @@ const ProjectDiv = styled.div`
         }
         .projects {
             .ant-carousel {
-                width: 550px;
+                width: 580px;
                 margin: 0 auto;
-                @media (max-width: 600px) {
+                @media (max-width: 620px) {
                     width: 100%;
                 }
             }
@@ -54,7 +54,7 @@ const ProjectDiv = styled.div`
                 color: #fff;
             }
             .ant-carousel .slick-dots {
-                bottom: -32px;
+                bottom: -28px;
                 height: 8px;
                 li {
                     button {
@@ -70,8 +70,8 @@ const ProjectDiv = styled.div`
               @media (max-width: 768px) {
                 padding: 0 1em;
               }
-              @media (max-width: 415px) {
-                padding: 0 8px;
+              @media (max-width: 620px) {
+                padding: 0;
               }
               &.slick-active {
                   transform: scale(1);
@@ -92,33 +92,24 @@ const ProjectDiv = styled.div`
                   font-size: 16px;
                   position: relative;
                   transition: all 0.5s ease;
-                  box-shadow: 0 0 4px 2px rgba(31, 150, 255, 0.2), 
-                              0 2px 6px 2px rgba(0, 132, 248, 0.3), 
-                              0px 10px 20px  rgba(0, 0, 0, 0.19),
-                              0px 6px 10px rgba(0, 0, 0, 0.23);
+                  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px,
+                              rgba(0, 0, 0, 0.23) 0px 6px 10px;
                  &:hover {
+                     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 60px,
+                                 rgba(0, 0, 0, 0.22) 0px 15px 20px;
                     transform: translate3d(0, -5px, 0);
-                    box-shadow: 0 0 6px 8px rgba(31, 150, 255, 0.2), 
-                                0px 8px 12px 12px rgba(0, 132, 248, 0.3), 
-                                0px 10px 20px 6px rgba(0, 0, 0, 0.19),
-                                0px 12px 10px 10px rgba(0, 0, 0, 0.23);
+                 
                  }
                   .img {
-                    height: 300px;
+                    height: 240px;
                     width: 100%;
                     position: relative;
                     overflow: hidden;
-                    /* position: absolute;
-                    left: 50%;
-                    margin-left: -45%;
-                    top: -120px;*/
-                    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.5);
                     transition: all 0.3s ease-in-out;
-                    @media (max-width: 415px) {
-                        height: 260px;
-                    }
+                    /*@media (max-width: 415px) {
+                        height: 240px;
+                    }*/
                     &:hover {
-                        /*transform: translate3d(0, -30%, 0);*/
                         .overlay {
                             opacity: 1;
                             &:before {
@@ -149,7 +140,6 @@ const ProjectDiv = styled.div`
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        background: rgba(0, 0, 0, 0.2);
                         opacity: 0;
                         transition: all 0.3s ease;
                         &::before {
@@ -159,7 +149,7 @@ const ProjectDiv = styled.div`
                             left: 0;
                             width: 100%;
                             height: 300%;
-                            background: rgba(255, 255, 255, 0.6);
+                            background: rgba(178, 137, 251, 0.8);
                             transition: all 0.45s ease;
                             transform: rotate3d(0, 0, 1, 100deg);
                             transform-origin: 0 100%;
@@ -204,22 +194,11 @@ const ProjectDiv = styled.div`
                  
                   
                   .project-detail {
-                      padding: 1em;
+                      padding: 0.8em 1em;
                       position: relative;
                       z-index: 100;
                       background: #FFF;
                       border-bottom: 2px solid #CCC;
-                      /*&::before {
-                          content: '';
-                          width: 100%;
-                          height: 30px;
-                          background: rgba(255, 255, 255, 1);
-                          position: absolute;
-                          top: -10px;
-                          left: 0;
-                          box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.5);
-                          
-                      }*/
                       .header {
                           text-align: left;
                           border-bottom: 2px solid #4AE3B5;
@@ -268,9 +247,9 @@ const ProjectDiv = styled.div`
                            display: flex;
                            flex-wrap: wrap;
                            align-items: center;
-                           background: #607D8B;
+                           background: #004b6d;
                            .technologyContent {
-                               padding: 0.5em 0.2em;
+                               padding: 0.3em;
                                text-align: left;
                                display: flex;
                                align-items: center;
@@ -282,7 +261,8 @@ const ProjectDiv = styled.div`
                                    color: #a5a7aa;
                                    transition: all 0.6s ease-in-out;
                                    &:hover {
-                                        background: rgba(30, 136, 229, 0.8);
+                                      /*  background: rgba(30, 136, 229, 0.8);*/
+                                        background: #39719a;
                                         border-radius: 50%;
                                    }
                                    .icon {

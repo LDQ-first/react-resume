@@ -236,6 +236,8 @@ export default class Project extends Component {
          console.log(this._project.offsetTop)*/
          _this._setTopData(2, this._project.offsetTop)
     }
+
+    
     
 
     render() {
@@ -348,6 +350,13 @@ export default class Project extends Component {
                 </div>
             )
         })
+
+        
+
+
+        const settings = {
+          
+        }
     
         return (
             <ProjectDiv>
@@ -356,7 +365,7 @@ export default class Project extends Component {
                     项目
                   </h2>
                   <div className="projects">
-                      <Carousel>
+                      <Carousel {...settings}>
                         { projects }
                         <div className="project more">
                             <div className="project-item">
@@ -366,23 +375,6 @@ export default class Project extends Component {
                                 </a>
                             </div>
                         </div>
-                        {/*<div className="project">
-                            <div className="project-item">
-                                
-                            </div>
-                        </div>
-                        <div className="project">
-                           
-                        </div>
-                        <div className="project">
-                            
-                        </div>
-                        <div className="project">
-                            
-                        </div>
-                        <div className="project">
-                            
-                        </div>*/}
                     </Carousel>
                   </div>
                </div>
