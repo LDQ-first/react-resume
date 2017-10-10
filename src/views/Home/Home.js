@@ -98,32 +98,33 @@ class Home extends Component {
 
     _scroll (top, isAnimated = true) {
         if(!isAnimated) {
+            console.log(isAnimated)
             setTimeout(() => {
                 document.body.scrollTop = 0
             }, 0)
         }
-
+        
 
         const timer = setInterval(() => {
             const b = document.body
-         //    console.log(Math.ceil(b.scrollTop), top - 110)
+        //     console.log(Math.ceil(b.scrollTop), top - 110)
 
             if( b.scrollTop === 0 && top === 0) {
                 this._chooseNav(0, false)
                  clearInterval(timer)
             }
-            else if( Math.ceil(b.scrollTop) > top - 110 ) {
-                 b.scrollTop -= 22
-            } 
             else if( Math.ceil(b.scrollTop) >= top - 110 - 22 && Math.ceil(b.scrollTop) <= top - 110 + 22 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                b.scrollTop = top - 110
                 clearInterval(timer)
             } 
+             else if( Math.ceil(b.scrollTop) > top - 110 ) {
+                 b.scrollTop -= 22
+            } 
             else {
                 b.scrollTop += 22 
             }  
-             
+              console.log(Math.ceil(b.scrollTop))
         }, 1000 / 60)
        
     }

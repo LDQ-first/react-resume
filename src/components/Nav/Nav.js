@@ -19,9 +19,9 @@ export default class Nav extends Component {
                 fixed: true
             })
         }
-        window.addEventListener('scroll', () => {
-            
+        window.addEventListener('mousewheel', () => {
              const { _this } = this.props
+           /*  console.log(document.body.scrollTop, document.body.clientHeight - 400)*/
              if(document.body.scrollTop > document.body.clientHeight - 400) {
                 this.setState({
                     fixed: true
@@ -70,6 +70,18 @@ export default class Nav extends Component {
             isSpread: !isSpread
         })
     }
+
+    componentWillReceiveProps(nextProps) {
+        const { activeIndex } = nextProps
+        console.log(activeIndex)
+        console.log(typeof activeIndex)
+        if(activeIndex === 0) {
+             this.setState({
+                fixed: false
+            })
+        }
+    }
+    
 
 
 

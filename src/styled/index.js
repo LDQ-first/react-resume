@@ -21,6 +21,7 @@ export default injectGlobal`
         overflow: auto;
     }
     body {
+        overflow-y: auto;
         font-size: 14px;
         height: 100vh;
         line-height: 1.6;

@@ -13,7 +13,9 @@ export const moveFunc = (e) => {
           deltaY = y - centerY,
           percentX = deltaX / centerX,
           percentY = deltaY / centerY,
-          deg = 10
+          deg = 4
+          console.log(-percentY, percentX)
+          /*console.log(percentX, percentY)*/
 
     /* _this.style.transform = `rotateX( ${deg} * -${percentY} deg) rotateY( ${deg} * ${percentX} deg)`*/
    _this.style.transform = 'rotateX(' + deg * -percentY + 'deg)' + 
