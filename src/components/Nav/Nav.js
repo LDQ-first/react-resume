@@ -19,7 +19,8 @@ export default class Nav extends Component {
                 fixed: true
             })
         }
-        window.addEventListener('mousewheel', () => {
+
+        const scrollFun = () => {
              const { _this } = this.props
            /*  console.log(document.body.scrollTop, document.body.clientHeight - 400)*/
              if(document.body.scrollTop > document.body.clientHeight - 400) {
@@ -32,7 +33,12 @@ export default class Nav extends Component {
                 })
             }
             _this._changeNavIndex()
-        })
+        }
+        window.onmousewheel = document.onmousewheel = scrollFun
+        if(document.addEventListener){
+            document.addEventListener('DOMMouseScroll', scrollFun, false)
+        }
+      /*  document.body.addEventListener('mousewheel', scrollFun)*/
     }
     
 
@@ -73,8 +79,7 @@ export default class Nav extends Component {
 
     componentWillReceiveProps(nextProps) {
         const { activeIndex } = nextProps
-        console.log(activeIndex)
-        console.log(typeof activeIndex)
+       /* console.log(activeIndex)*/
         if(activeIndex === 0) {
              this.setState({
                 fixed: false
