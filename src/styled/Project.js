@@ -111,14 +111,14 @@ const ProjectDiv = styled.div`
                  }
                 
                   .img {
-                    height: 320px;
+                    height: 400px;
                     width: 100%;
                     position: relative;
                     overflow: hidden;
                     transition: all 0.3s ease-in-out;
-                    /*@media (max-width: 415px) {
-                        height: 240px;
-                    }*/
+                    @media (max-width: 415px) {
+                        height: 300px;
+                    }
                     &:hover {
                         .overlay {
                             opacity: 1;

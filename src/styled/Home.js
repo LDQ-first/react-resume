@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const HomeDiv = styled.div`
     .goToTop {
         position: fixed;
+        z-index: 1000;
         right: 1em;
         bottom: 1em;
         width: 2em;

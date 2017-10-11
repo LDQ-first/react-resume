@@ -17,7 +17,7 @@ export default class Bio extends Component {
                 {
                     name: '年龄',
                     icon: 'yingerchezulin',
-                    content: '22岁'
+                    content: `${new Date().getFullYear() - 1995}岁`
                 },
                 {
                     name: '学历',

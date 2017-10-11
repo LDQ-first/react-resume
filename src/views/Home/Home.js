@@ -125,15 +125,15 @@ class Home extends Component {
                  clearInterval(timer)
             }
             else if( Math.ceil(b.scrollTop) > top - 110 ) {
-                 b.scrollTop -= speed || 22
+                 b.scrollTop -= speed || 30
             } 
-            else if( Math.ceil(b.scrollTop) >= top - 110 - 22 && Math.ceil(b.scrollTop) <= top - 110 + 22 ||
+            else if( Math.ceil(b.scrollTop) >= top - 110 - 30 && Math.ceil(b.scrollTop) <= top - 110 + 30 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                b.scrollTop = top - 110
                 clearInterval(timer)
             } 
             else {
-                b.scrollTop += speed || 22 
+                b.scrollTop += speed || 30 
             }  
              /* console.log(Math.ceil(b.scrollTop))*/
         }, 1000 / 60)
@@ -185,7 +185,7 @@ class Home extends Component {
                 <Contact _this={this} ref={contact => this._contact = contact} />
                 <Footer  _this={this} />
                 <div className={classNames('goToTop', {show: isShowGoToTop})} onClick={() => {
-                      this._chooseNav(0, true, 66)
+                      this._chooseNav(0, true, 80)
                 }}>
                     Top
                 </div>
