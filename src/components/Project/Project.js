@@ -17,10 +17,10 @@ export default class Project extends Component {
         this.state = {
             projectArr: [
                 {
-                    review: 'http://ldq-first.github.io/react-eyepetizer/dist/#/',
+                    review: '//ldqblog.me/react-eyepetizer/dist/#/',
                     sourceCode: 'https://github.com/LDQ-first/react-eyepetizer',
                     title: 'React全家桶版开眼',
-                    img: 'https://ldq-first.github.io/work/img/All/02.jpg',
+                    img: '//ldqblog.me/work/img/All/02.jpg',
                     content: [
                         `React全家桶 + Styled-components + Material-ui + Immutable + Reselect 
                         + Axios + Redux-thunk&async/await + Webpack`,
@@ -65,10 +65,10 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'https://ldq-first.github.io/vue-CNode/dist/#/',
+                    review: '//ldqblog.me/vue-CNode/dist/#/',
                     sourceCode: 'https://github.com/LDQ-first/vue-CNode',
                     title: 'Vue全家桶版CNode社区',
-                    img: 'https://ldq-first.github.io/work/img/All/03.jpg',
+                    img: '//ldqblog.me/work/img/All/03.jpg',
                     content: [
                         `Vue全家桶 + SASS + Axios + Webpack`,
                         `实现了登录，回复，发帖，收藏，点赞，查看消息，更换主题色，退出等功能`,
@@ -97,7 +97,7 @@ export default class Project extends Component {
                     review: 'http://39.108.141.131/vueshop/#/',
                     sourceCode: 'https://github.com/LDQ-first/Vue-shop',
                     title: 'Vue全家桶 + Express + MongoDB 开发的简单商城',
-                    img: 'https://ldq-first.github.io/work/img/All/04.jpg',
+                    img: '//ldqblog.me/work/img/All/04.jpg',
                     content: [
                         `Vue全家桶 + Express + MongoDB + Mongoose + SASS + Axios + Echarts + Webpack`,
                         `实现登录，注册，添加删除购物车，添加删除地址，完成订单，查看订单详情， 下拉刷新等功能`,
@@ -140,10 +140,10 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'https://ldq-first.github.io/react-animating-resume/build/',
+                    review: '//ldqblog.me/react-animating-resume/build/',
                     sourceCode: 'https://github.com/LDQ-first/react-animating-resume',
                     title: 'React.js 版的动态响应式简历',
-                    img: 'https://ldq-first.github.io/work/img/RAResume/001.jpg',
+                    img: '//ldqblog.me/work/img/RAResume/001.jpg',
                     content: [
                         `React.js`,
                         `利用 Async/Await Promise 实现按步骤绘制动态简历，实现了加速、播放、暂停、跳过、重来、下载PDF等功能`,
@@ -173,10 +173,10 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'https://ldq-first.github.io/vue-animating-resume/dist/',
+                    review: '//ldqblog.me/vue-animating-resume/dist/',
                     sourceCode: 'https://github.com/LDQ-first/vue-animating-resume',
                     title: 'Vue.js 版的动态响应式简历',
-                    img: 'https://ldq-first.github.io/work/img/VAResume/001.jpg',
+                    img: '//ldqblog.me/work/img/VAResume/001.jpg',
                     content: [
                         `Vue.js`,
                         `利用 Async/Await Promise 实现按步骤绘制动态简历，实现了加速、播放、暂停、跳过、重来、下载PDF等功能`,
@@ -206,10 +206,10 @@ export default class Project extends Component {
                     ]
                 },
                 {
-                    review: 'http://ldq-first.github.io/frame-Tic-Tac-Toe/',
+                    review: '//ldqblog.me/frame-Tic-Tac-Toe/',
                     sourceCode: 'https://github.com/LDQ-first/frame-Tic-Tac-Toe',
                     title: '使用ES5写的框架井字棋大战',
-                    img: 'https://ldq-first.github.io/work/img/All/05.jpg',
+                    img: '//ldqblog.me/work/img/All/05.jpg',
                     content: [
                         `ES5(原生JS)`,
                         `实现选择作战框架，判定平局，胜败等功能`,
@@ -369,7 +369,7 @@ export default class Project extends Component {
                         { projects }
                         <div className="project more">
                             <div className="project-item">
-                                <a className="moreLink" href="http://ldq-first.github.io/work/" title="更多" 
+                                <a className="moreLink" href="//ldqblog.me/work/" title="更多" 
                                 target="_blank" rel="noopener noreferrer">                   
                                     <Icon type="plus" />
                                 </a>
@@ -379,7 +379,7 @@ export default class Project extends Component {
                      { projects }
                         <div className="project more">
                             <div className="project-item">
-                                <a className="moreLink" href="http://ldq-first.github.io/work/" title="更多" 
+                                <a className="moreLink" href="//ldqblog.me/work/" title="更多" 
                                 target="_blank" rel="noopener noreferrer">                   
                                     <Icon type="plus" />
                                 </a>

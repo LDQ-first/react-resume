@@ -12,15 +12,15 @@ export default class Footer extends Component {
             date: new Date().getFullYear() === 2017 ? 2017 : `2017 ~ ${new Date().getFullYear()}`,
             others: [
                 {
-                    link: `http://ldq-first.github.io/vue-pdf-resume/dist/#/`,
+                    link: `//ldqblog.me/vue-pdf-resume/dist/#/`,
                     icon: `PDF--`
                 },
                 {
-                    link: `http://ldqblog.me/markdown-resume/html/%E7%AE%80%E5%8E%86.html`,
+                    link: `//ldqblog.me/markdown-resume/html/%E7%AE%80%E5%8E%86.html`,
                     icon: `markdown`
                 },
                 {
-                    link: `https://ldq-first.github.io/`,
+                    link: `//ldqblog.me/`,
                     icon: `bokefenxiang`
                 },
             ]
