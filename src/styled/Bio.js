@@ -45,8 +45,8 @@ const BioDiv = styled.div`
                     box-shadow: 0 2px 6px 0 rgba(51,105,231,0.4),
                                 0 4px 12px rgba(51,105,231,0.4);
                     .avatar {
-                        width: 161px;
-                        height: 200px;
+                        width: 220px;
+                        height: 300px;
                         background: url(${ldq}) no-repeat center/90% ; 
                     }
                     .avatar-content {

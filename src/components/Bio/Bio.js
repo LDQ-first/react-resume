@@ -62,6 +62,12 @@ export default class Bio extends Component {
                     content:  <a href="//ldqblog.me/vue-pdf-resume/dist/#/" target="_blank" 
                     rel="noopener noreferrer">PDF简历</a>
                 },
+                {
+                    name: 'Markdown简历',
+                    icon: 'markdown',
+                    content:  <a href="//ldqblog.me/markdown-resume/html/%E7%AE%80%E5%8E%86.html" target="_blank" 
+                    rel="noopener noreferrer">Markdown简历</a>
+                },
             ]
         }
     } 
