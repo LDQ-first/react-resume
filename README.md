@@ -2,4 +2,4 @@
 
 ## 预览
  
-[预览](http://ldq-first.github.io/react-resume/dist/#/)
+[预览](http://ldqblog.me/react-resume/dist/#/)
