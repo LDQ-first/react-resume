@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import ldq from '../../static/img/ldq.jpg'
+/*import ldq from '../../static/img/ldq.jpg'*/
+import ldq from '../../static/img/pikachu.svg'
+
 
 const BioDiv = styled.div`
      background: #FFF;
@@ -36,13 +38,15 @@ const BioDiv = styled.div`
                     cursor: pointer;
                     position: relative;
                     transition: transform 0.1s;
-                    box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
+                    /*box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
                                 0 0 10px rgba(30, 136, 229, 0.4),
-                                0 4px 12px rgba(30, 136, 229, 0.5);
+                                0 4px 12px rgba(30, 136, 229, 0.5);*/
+                    box-shadow: 0 2px 6px 0 rgba(51,105,231,0.4),
+                                0 4px 12px rgba(51,105,231,0.4);
                     .avatar {
                         width: 161px;
                         height: 200px;
-                        background: url(${ldq}) no-repeat 0 0/cover; 
+                        background: url(${ldq}) no-repeat center/90% ; 
                     }
                     .avatar-content {
                         text-align: center;
