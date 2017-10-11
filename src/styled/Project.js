@@ -31,7 +31,7 @@ const ProjectDiv = styled.div`
             margin-bottom: 4em;
             text-align: center;
             color: #FFF;
-            font-size: 20px;
+            font-size: 2em;
         }
         .projects {
             /*.ant-carousel {

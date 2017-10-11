@@ -30,6 +30,7 @@ const SkillDiv = styled.div`
             text-align: center;
             color: #FFF;
             margin-bottom: 2em;
+            font-size: 2em;
         }
         .skill {
             padding: 0.5em;

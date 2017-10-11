@@ -61,8 +61,11 @@ const HeaderDiv = styled.div`
     }
 
     .headerContent {
-        height: 100px;
         text-align: center;
+        font-size: 1.5em;
+        @media (max-width: 415px) {
+            font-size: 1.2em;
+        }
         .title {
             color: #EEE;
             margin-bottom: 1em;

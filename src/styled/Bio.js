@@ -4,7 +4,7 @@ import ldq from '../../static/img/pikachu.svg'
 
 
 const BioDiv = styled.div`
-     background: #FFF;
+     background: #f8faff;
      padding: 4em 0;
     .bioContent {
         max-width: 900px;
@@ -15,7 +15,7 @@ const BioDiv = styled.div`
         .title {
             text-align: center;
             margin-bottom: 1em;
-             font-size: 20px;
+             font-size: 2em;
         }
         .bio {
             display: flex;
@@ -38,6 +38,7 @@ const BioDiv = styled.div`
                     cursor: pointer;
                     position: relative;
                     transition: transform 0.1s;
+                    background: linear-gradient(80deg, #00aeff, #3369e7);
                     /*box-shadow: 0 0 4px rgba(30, 136, 229, 0.3),
                                 0 0 10px rgba(30, 136, 229, 0.4),
                                 0 4px 12px rgba(30, 136, 229, 0.5);*/

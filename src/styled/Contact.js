@@ -10,6 +10,7 @@ const ContactDiv = styled.div`
             text-align: center;
             color: #6C73C4;
             margin-bottom: 2em;
+            font-size: 2em;
         }
         .contactWrap {
             display: flex;

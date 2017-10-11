@@ -43,7 +43,25 @@ export default class Bio extends Component {
                     name: 'QQ邮箱',
                     icon: 'youxiang',
                     content: '2320975287@qq.com'
-                }
+                },
+                {
+                    name: 'Github',
+                    icon: 'github',
+                    content: <a href="https://github.com/LDQ-first" target="_blank" 
+                    rel="noopener noreferrer">LDQ-first</a>
+                },
+                {
+                    name: '博客',
+                    icon: 'bokefenxiang',
+                    content: <a href="//ldqblog.me" target="_blank" 
+                    rel="noopener noreferrer">博客</a>
+                },
+                {
+                    name: 'PDF简历',
+                    icon: 'PDF--',
+                    content:  <a href="//ldqblog.me/vue-pdf-resume/dist/#/" target="_blank" 
+                    rel="noopener noreferrer">PDF简历</a>
+                },
             ]
         }
     } 
@@ -68,7 +86,7 @@ export default class Bio extends Component {
             if(info.content instanceof Array) {
                  contents = info.content.map((content, index) => {
                      return (
-                         <p key={index} className="content">
+                         <p key={index} className="content" >
                             {content}
                          </p>
                      )

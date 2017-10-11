@@ -9,6 +9,7 @@ const EducationDiv = styled.div`
             text-align: center;
             color: #FFF;
             margin-bottom: 2em;
+            font-size: 2em;
         }
         .educationWrap {
             color: #FFF;
