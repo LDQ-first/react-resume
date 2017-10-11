@@ -34,7 +34,10 @@ export default class Nav extends Component {
             }
             _this._changeNavIndex()
         }
-        window.onmousewheel = document.onmousewheel = scrollFun
+        document.ontouchmove = () => {
+            console.log('ontouchmove')
+        }
+        window.ontouchmove = document.ontouchmove = window.onscroll = window.onmousewheel = document.onmousewheel = scrollFun
         if(document.addEventListener){
             document.addEventListener('DOMMouseScroll', scrollFun, false)
         }

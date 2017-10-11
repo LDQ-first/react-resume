@@ -6,16 +6,16 @@ export const moveFunc = (e) => {
           _this = e.currentTarget,
           nameJob = document.querySelector('.name-job'),
           x = e.pageX - _this.getBoundingClientRect().left,
-          y = e.pageY - _this.getBoundingClientRect().top - b.scrollTop,
+          /*y = e.pageY - _this.getBoundingClientRect().top - b.scrollTop,*/
+          y = e.pageY - _this.getBoundingClientRect().top,
           centerX = _this.offsetWidth / 2,
           centerY = _this.offsetHeight / 2,
           deltaX = x - centerX,
           deltaY = y - centerY,
           percentX = deltaX / centerX,
           percentY = deltaY / centerY,
-          deg = 4
-          console.log(-percentY, percentX)
-          /*console.log(percentX, percentY)*/
+          deg = 10
+      
 
     /* _this.style.transform = `rotateX( ${deg} * -${percentY} deg) rotateY( ${deg} * ${percentX} deg)`*/
    _this.style.transform = 'rotateX(' + deg * -percentY + 'deg)' + 
