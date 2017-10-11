@@ -16,8 +16,8 @@ const HomeDiv = styled.div`
         color: #FFF;
         padding: 1.2em;
         display: none;
-        .show {
-            display: block;
+        &.show {
+            display: flex;
         }
     }
     

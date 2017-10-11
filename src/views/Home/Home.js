@@ -34,7 +34,8 @@ class Home extends Component {
     constructor (props) {
         super(props)
         this.state = {
-           isFixed: false
+           isFixed: false,
+           isShowGoToTop: false
         }
     }
 
@@ -47,22 +48,31 @@ class Home extends Component {
     
     componentDidMount() {
         /* console.log(document.body.scrollTop)*/
-         this._chooseNav(-1, false)       
+         this._chooseNav(-1, false)      
     }
     
- 
     
 
-    _changeNavIndex() {
+    _changeNavIndex(speed) {
         const b = document.body
       //  console.log(Math.ceil(b.scrollTop))
+      const { isShowGoToTop } = this.state
+       if(b.scrollTop > b.clientHeight && !isShowGoToTop) {
+            this.setState({
+                isShowGoToTop: true
+            })
+        } else if(b.scrollTop <= b.clientHeight && isShowGoToTop) {
+            this.setState({
+                isShowGoToTop: false
+            })
+        }
 
         const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
         const scrollToJS = scroll.toJS() 
 
         if(Math.ceil(b.scrollTop) < scrollToJS[1] - 110 ) {
            /* console.log(0)*/
-             this._chooseNav(0, false)
+             this._chooseNav(0, false, speed)
              return 
         }
         
@@ -72,19 +82,11 @@ class Home extends Component {
               
             if( Math.ceil(b.scrollTop) >= top - 110 - 66 && Math.ceil(b.scrollTop) <= top - 110 + 66 ) {
                /*console.log(i)*/
-               this._chooseNav(i, false)
+               this._chooseNav(i, false, speed)
                 break;
             } 
         }
-         if(document.body.scrollTop > document.body.clientHeight) {
-            this.setState({
-                isShowGoToTop: true
-            })
-        } else {
-            this.setState({
-                isShowGoToTop: false
-            })
-        }
+        
     }
     
 
@@ -93,19 +95,19 @@ class Home extends Component {
          setTopData(index, top)
     }
 
-    _chooseNav (index, isScroll = true) {
+    _chooseNav (index, isScroll = true, speed) {
         const {chooseNavIndex, scroll} = this.props
         chooseNavIndex(index)
          if(isScroll) {
              const scrollToJS = scroll.toJS()
-             this._scroll(scrollToJS[index])
+             this._scroll(scrollToJS[index], isScroll, speed)
          }
          if(index === -1) {
-             this._scroll(0, false)
+             this._scroll(0, isScroll)
          }
     }
 
-    _scroll (top, isAnimated = true) {
+    _scroll (top, isAnimated = true, speed) {
         if(!isAnimated) {
             console.log(isAnimated)
             setTimeout(() => {
@@ -123,7 +125,7 @@ class Home extends Component {
                  clearInterval(timer)
             }
             else if( Math.ceil(b.scrollTop) > top - 110 ) {
-                 b.scrollTop -= 22
+                 b.scrollTop -= speed || 22
             } 
             else if( Math.ceil(b.scrollTop) >= top - 110 - 22 && Math.ceil(b.scrollTop) <= top - 110 + 22 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
@@ -131,7 +133,7 @@ class Home extends Component {
                 clearInterval(timer)
             } 
             else {
-                b.scrollTop += 22 
+                b.scrollTop += speed || 22 
             }  
              /* console.log(Math.ceil(b.scrollTop))*/
         }, 1000 / 60)
@@ -178,7 +180,7 @@ class Home extends Component {
                 <Contact _this={this} ref={contact => this._contact = contact} />
                 <Footer  _this={this} />
                 <div className={classNames('goToTop', {show: isShowGoToTop})} onClick={() => {
-                      this._chooseNav(0)
+                      this._chooseNav(0, true, 66)
                 }}>
                     Top
                 </div>
