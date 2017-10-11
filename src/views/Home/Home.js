@@ -63,13 +63,13 @@ class Home extends Component {
        
 
       const { isShowGoToTop } = this.state
-       if(b.scrollTop > b.clientHeight && !isShowGoToTop ||
-          d.scrollTop > d.clientHeight && !isShowGoToTop) {
+       if( d.scrollTop === 0 && b.scrollTop > b.clientHeight && !isShowGoToTop ||
+           b.scrollTop === 0 && d.scrollTop > d.clientHeight && !isShowGoToTop) {
             this.setState({
                 isShowGoToTop: true
             })
-        } else if(b.scrollTop <= b.clientHeight && isShowGoToTop || 
-                  d.scrollTop <= d.clientHeight && isShowGoToTop) {
+        } else if( d.scrollTop === 0 && b.scrollTop <= b.clientHeight && isShowGoToTop || 
+                   b.scrollTop === 0 && d.scrollTop <= d.clientHeight && isShowGoToTop) {
             this.setState({
                 isShowGoToTop: false
             })
