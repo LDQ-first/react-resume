@@ -109,7 +109,7 @@ class Home extends Component {
 
     _scroll (top, isAnimated = true, speed) {
         if(!isAnimated) {
-            console.log(isAnimated)
+          /*  console.log(isAnimated)*/
             setTimeout(() => {
                 document.body.scrollTop = 0
             }, 0)
@@ -148,7 +148,12 @@ class Home extends Component {
     }
 
     _resetComTop() {
-        if( this._education && this._contact) {
+        if( this._header && this._bio && this._project && this._skill 
+            && this._education && this._contact) {
+            this._setTopData(0, this._header._header.offsetTop)
+            this._setTopData(1, this._bio._bio.offsetTop)
+            this._setTopData(2, this._project._project.offsetTop)
+            this._setTopData(3, this._skill._skill.offsetTop)
             this._setTopData(4, this._education._education.offsetTop)
             this._setTopData(5, this._contact._contact.offsetTop)
         }
@@ -172,10 +177,10 @@ class Home extends Component {
         
         return (
             <HomeDiv>
-                <Header _this={this} activeIndex = {activeIndex}/>
-                <Bio _this={this} />
-                <Project _this={this} />
-                <Skill _this={this} />
+                <Header _this={this} activeIndex = {activeIndex} ref={header => this._header = header}/>
+                <Bio _this={this} ref={bio => this._bio = bio} />
+                <Project _this={this} ref={project => this._project = project} />
+                <Skill _this={this} ref={skill => this._skill = skill} />
                 <Education _this={this} ref={education => this._education = education} />
                 <Contact _this={this} ref={contact => this._contact = contact} />
                 <Footer  _this={this} />

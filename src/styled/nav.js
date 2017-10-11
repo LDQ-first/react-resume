@@ -105,6 +105,7 @@ const NavDiv = styled.div`
                     display: block;
                 }
                 .nav {
+                     padding: 1em;
                      &.active {
                         &::before {
                             background: transparent;

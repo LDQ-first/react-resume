@@ -44,6 +44,17 @@ export default class Nav extends Component {
       
 
     }
+
+    
+    componentDidMount() {
+        const { _this } = this.props
+        window.addEventListener('resize', () => {
+            this._hideNavToggle()
+            _this._resetComTop()
+        })
+       
+    }
+    
     
 
     constructor (props) {
@@ -74,11 +85,24 @@ export default class Nav extends Component {
         }
     }
 
+    _hideNavToggle () {
+         const { isSpread } = this.state
+        if(window.innerWidth > 768 && isSpread) {
+            this.setState({
+                isSpread: false
+            })
+        }
+    }
+
     _toggle () {
+       /* console.log(window.innerWidth)*/
         const { isSpread } = this.state
-        this.setState({
-            isSpread: !isSpread
-        })
+        if(window.innerWidth <= 768) {
+            this.setState({
+                isSpread: !isSpread
+            })
+        } 
+        
     }
 
     componentWillReceiveProps(nextProps) {
