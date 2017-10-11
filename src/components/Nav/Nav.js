@@ -34,14 +34,13 @@ export default class Nav extends Component {
             }
             _this._changeNavIndex()
         }
-        document.ontouchmove = () => {
-            console.log('ontouchmove')
-        }
-        window.ontouchmove = document.ontouchmove = window.onscroll = window.onmousewheel = document.onmousewheel = scrollFun
-        if(document.addEventListener){
+        document.addEventListener('touchmove', scrollFun, false)
+      /*  window.onmousewheel = document.onmousewheel = scrollFun*/
+        /*if(document.addEventListener){
             document.addEventListener('DOMMouseScroll', scrollFun, false)
-        }
-      /*  document.body.addEventListener('mousewheel', scrollFun)*/
+        }*/
+        document.body.addEventListener('scroll', scrollFun, false)
+
     }
     
 
