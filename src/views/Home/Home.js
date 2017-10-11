@@ -35,7 +35,8 @@ class Home extends Component {
         super(props)
         this.state = {
            isFixed: false,
-           isShowGoToTop: false
+           isShowGoToTop: false,
+           isScroll: false
         }
     }
 
@@ -54,8 +55,13 @@ class Home extends Component {
     
 
     _changeNavIndex(speed) {
+        const { isScroll } = this.state
+        if(isScroll) return 
+
         const b = document.body
       //  console.log(Math.ceil(b.scrollTop))
+       
+
       const { isShowGoToTop } = this.state
        if(b.scrollTop > b.clientHeight && !isShowGoToTop) {
             this.setState({
@@ -108,6 +114,9 @@ class Home extends Component {
     }
 
     _scroll (top, isAnimated = true, speed) {
+          const { isScroll } = this.state
+          if(isScroll) return 
+
         if(!isAnimated) {
           /*  console.log(isAnimated)*/
             setTimeout(() => {
@@ -119,10 +128,22 @@ class Home extends Component {
         const timer = setInterval(() => {
             const b = document.body
         //     console.log(Math.ceil(b.scrollTop), top - 110)
-
+           if(!this.state.isScroll)  {
+               /*console.log('isScroll: ' , isScroll)*/
+                this.setState({
+                    isScroll: true
+                })
+           }
+           
             if( b.scrollTop === 0 && top === 0) {
                 this._chooseNav(0, false)
+                 
                  clearInterval(timer)
+                /*  console.log('isScroll: ' , isScroll)*/
+                  this.setState({
+                    isScroll: false
+                })
+               
             }
             else if( Math.ceil(b.scrollTop) > top - 110 ) {
                  b.scrollTop -= speed || 30
@@ -130,10 +151,17 @@ class Home extends Component {
             else if( Math.ceil(b.scrollTop) >= top - 110 - 30 && Math.ceil(b.scrollTop) <= top - 110 + 30 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                b.scrollTop = top - 110
+              /*  console.log('isScroll: ' , isScroll)*/
+               this.setState({
+                    isScroll: false
+                })
                 clearInterval(timer)
+                 
             } 
             else {
+
                 b.scrollTop += speed || 30 
+                
             }  
              /* console.log(Math.ceil(b.scrollTop))*/
         }, 1000 / 60)
