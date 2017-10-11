@@ -20,11 +20,12 @@ const ContactDiv = styled.div`
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: space-around;
                 @media (max-width: 860px) {
                     width: 70%;
                 }
                 .contact {
+                    flex: 1;
                     margin: 2em 1em;
                     display: flex;
                     padding: 1em;

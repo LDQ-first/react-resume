@@ -15,7 +15,7 @@ import Education from '../../components/Education/Education.js'
 import Contact from '../../components/Contact/Contact.js'
 import Footer from '../../components/Footer/Footer.js'
 import { toJS } from 'immutable'
-
+import classNames from 'classnames'
 
 
 class Home extends Component {
@@ -76,6 +76,15 @@ class Home extends Component {
                 break;
             } 
         }
+         if(document.body.scrollTop > document.body.clientHeight) {
+            this.setState({
+                isShowGoToTop: true
+            })
+        } else {
+            this.setState({
+                isShowGoToTop: false
+            })
+        }
     }
     
 
@@ -113,18 +122,18 @@ class Home extends Component {
                 this._chooseNav(0, false)
                  clearInterval(timer)
             }
+            else if( Math.ceil(b.scrollTop) > top - 110 ) {
+                 b.scrollTop -= 22
+            } 
             else if( Math.ceil(b.scrollTop) >= top - 110 - 22 && Math.ceil(b.scrollTop) <= top - 110 + 22 ||
               Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                b.scrollTop = top - 110
                 clearInterval(timer)
             } 
-             else if( Math.ceil(b.scrollTop) > top - 110 ) {
-                 b.scrollTop -= 22
-            } 
             else {
                 b.scrollTop += 22 
             }  
-              console.log(Math.ceil(b.scrollTop))
+             /* console.log(Math.ceil(b.scrollTop))*/
         }, 1000 / 60)
        
     }
@@ -150,7 +159,7 @@ class Home extends Component {
     render() {
 
        const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
-       const { isFixed } = this.state
+       const { isFixed, isShowGoToTop } = this.state
        /*if(scroll ) {
            console.log(scroll)
        }
@@ -168,6 +177,11 @@ class Home extends Component {
                 <Education _this={this} ref={education => this._education = education} />
                 <Contact _this={this} ref={contact => this._contact = contact} />
                 <Footer  _this={this} />
+                <div className={classNames('goToTop', {show: isShowGoToTop})} onClick={() => {
+                      this._chooseNav(0)
+                }}>
+                    Top
+                </div>
             </HomeDiv>
         )
     }

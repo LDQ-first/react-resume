@@ -33,6 +33,7 @@ export default class Nav extends Component {
                 })
             }
             _this._changeNavIndex()
+            /*console.log('event')*/
         }
         document.addEventListener('touchmove', scrollFun, false)
       /*  window.onmousewheel = document.onmousewheel = scrollFun*/
@@ -40,6 +41,7 @@ export default class Nav extends Component {
             document.addEventListener('DOMMouseScroll', scrollFun, false)
         }*/
         document.body.addEventListener('scroll', scrollFun, false)
+      
 
     }
     

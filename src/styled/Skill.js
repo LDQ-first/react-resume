@@ -33,6 +33,9 @@ const SkillDiv = styled.div`
         }
         .skill {
             padding: 0.5em;
+            .pieReact {
+                height: 500px;
+            }
             .skillLists {
                 padding: 0 0.5em;
                 display: flex;

@@ -196,7 +196,9 @@ export default class Skill extends Component {
                     技能
                   </h2>
                   <div className="skill">
-                      <PieReact option={ pieOption }/>
+                      <div className="pieReact">
+                           <PieReact option={ pieOption } />
+                      </div>
                       <ul className="skillLists">
                           { technologys ? technologys : null }
                       </ul>
