@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import  ProjectDiv  from '../../styled/Project.js'
-import  {Carousel} from 'antd'
+/*import  {Carousel} from 'antd'*/
 import { Icon } from 'antd'
 import classNames from 'classnames'
 
@@ -365,7 +365,7 @@ export default class Project extends Component {
                     项目
                   </h2>
                   <div className="projects">
-                      <Carousel {...settings}>
+                      {/*<Carousel {...settings}>
                         { projects }
                         <div className="project more">
                             <div className="project-item">
@@ -375,7 +375,16 @@ export default class Project extends Component {
                                 </a>
                             </div>
                         </div>
-                    </Carousel>
+                    </Carousel>*/}
+                     { projects }
+                        <div className="project more">
+                            <div className="project-item">
+                                <a className="moreLink" href="http://ldq-first.github.io/work/" title="更多" 
+                                target="_blank" rel="noopener noreferrer">                   
+                                    <Icon type="plus" />
+                                </a>
+                            </div>
+                        </div>
                   </div>
                </div>
             </ProjectDiv>

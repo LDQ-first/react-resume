@@ -23,6 +23,8 @@ const ProjectDiv = styled.div`
 
     .projectContent {
         padding: 1em 0;
+        max-width: 900px;
+        margin: 0 auto;
         .title {
             max-width: 900px;
             margin: 0 auto;
@@ -32,7 +34,7 @@ const ProjectDiv = styled.div`
             font-size: 20px;
         }
         .projects {
-            .ant-carousel {
+            /*.ant-carousel {
                 width: 580px;
                 margin: 0 auto;
                 @media (max-width: 620px) {
@@ -62,11 +64,17 @@ const ProjectDiv = styled.div`
                         height: 8px;
                     }
                 }
-            }
+            }*/
             .project {
               padding: 0 2em;
-              transform: scale(0.85);
+              /*transform: scale(0.85);*/
               transition: 0.5s;
+              margin: 0 0 4em 0;
+              /*display: flex;
+              justify-content: space-between;*/
+               &:last-child {
+                    margin-bottom: 0em;
+                }
               @media (max-width: 768px) {
                 padding: 0 1em;
               }
@@ -88,6 +96,7 @@ const ProjectDiv = styled.div`
               }
              
               .project-item {
+                  
                   background: #FFF;
                   font-size: 16px;
                   position: relative;
@@ -100,8 +109,9 @@ const ProjectDiv = styled.div`
                     transform: translate3d(0, -5px, 0);
                  
                  }
+                
                   .img {
-                    height: 240px;
+                    height: 320px;
                     width: 100%;
                     position: relative;
                     overflow: hidden;
@@ -148,7 +158,7 @@ const ProjectDiv = styled.div`
                             bottom: 0;
                             left: 0;
                             width: 100%;
-                            height: 300%;
+                            height: 1000%;
                             background: rgba(178, 137, 251, 0.8);
                             transition: all 0.45s ease;
                             transform: rotate3d(0, 0, 1, 100deg);
