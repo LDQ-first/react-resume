@@ -14,16 +14,23 @@ export default class Nav extends Component {
 
     
     componentWillMount() {
-        if(document.body.scrollTop > document.body.clientHeight - 400) {
+
+        const b =  document.body
+        const d =  document.documentElement
+        if(b.scrollTop > b.clientHeight - 400 || 
+           d.scrollTop > d.clientHeight - 400) {
             this.setState({
                 fixed: true
             })
         }
+       
 
         const scrollFun = () => {
              const { _this } = this.props
-           /*  console.log(document.body.scrollTop, document.body.clientHeight - 400)*/
-             if(document.body.scrollTop > document.body.clientHeight - 400) {
+           /*  console.log(b.scrollTop, b.clientHeight - 420)*/
+             if(b.scrollTop > b.clientHeight - 400 || 
+                d.scrollTop > d.clientHeight - 400) {
+               /*  console.log(d.scrollTop > d.clientHeight - 420)*/
                 this.setState({
                     fixed: true
                 })
@@ -33,14 +40,16 @@ export default class Nav extends Component {
                 })
             }
             _this._changeNavIndex()
-            /*console.log('event')*/
+             /*console.log(b.scrollTop)*/
+           /*  console.log(d.scrollTop)*/
+            
+           /* console.log('scroll')*/
         }
         document.addEventListener('touchmove', scrollFun, false)
-      /*  window.onmousewheel = document.onmousewheel = scrollFun*/
-        /*if(document.addEventListener){
-            document.addEventListener('DOMMouseScroll', scrollFun, false)
-        }*/
-        document.body.addEventListener('scroll', scrollFun, false)
+       /* window.onmousewheel = document.onmousewheel = scrollFun*/
+      /*  document.body.addEventListener('mousewheel', scrollFun, false)*/
+        window.addEventListener('scroll', scrollFun, false)
+       document.documentElement.addEventListener('mousewheel', scrollFun, false)
       
 
     }

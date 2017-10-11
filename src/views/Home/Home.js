@@ -48,7 +48,6 @@ class Home extends Component {
 
     
     componentDidMount() {
-        /* console.log(document.body.scrollTop)*/
          this._chooseNav(-1, false)      
     }
     
@@ -58,16 +57,19 @@ class Home extends Component {
         const { isScroll } = this.state
         if(isScroll) return 
 
-        const b = document.body
-      //  console.log(Math.ceil(b.scrollTop))
+        const b =  document.body
+        const d =  document.documentElement
+
        
 
       const { isShowGoToTop } = this.state
-       if(b.scrollTop > b.clientHeight && !isShowGoToTop) {
+       if(b.scrollTop > b.clientHeight && !isShowGoToTop ||
+          d.scrollTop > d.clientHeight && !isShowGoToTop) {
             this.setState({
                 isShowGoToTop: true
             })
-        } else if(b.scrollTop <= b.clientHeight && isShowGoToTop) {
+        } else if(b.scrollTop <= b.clientHeight && isShowGoToTop || 
+                  d.scrollTop <= d.clientHeight && isShowGoToTop) {
             this.setState({
                 isShowGoToTop: false
             })
@@ -76,21 +78,25 @@ class Home extends Component {
         const {scroll, activeIndex, chooseNavIndex, setTopData} = this.props
         const scrollToJS = scroll.toJS() 
 
-        if(Math.ceil(b.scrollTop) < scrollToJS[1] - 110 ) {
-           /* console.log(0)*/
+        if(d.scrollTop === 0 && Math.ceil(b.scrollTop) < scrollToJS[1] - 110   ) {
              this._chooseNav(0, false, speed)
              return 
-        }
+        } 
+        else if(b.scrollTop === 0 && Math.ceil(d.scrollTop) < scrollToJS[1] - 110  ) {
+             this._chooseNav(0, false, speed)
+             return 
+        } 
         
         for(let i = 1; i < scrollToJS.length; i++ ) {
             const top = scrollToJS[i]
-            //  console.log(Math.ceil(b.scrollTop), top - 110 - 22, top - 110 + 22)
               
-            if( Math.ceil(b.scrollTop) >= top - 110 - 66 && Math.ceil(b.scrollTop) <= top - 110 + 66 ) {
-               /*console.log(i)*/
+            if( Math.ceil(b.scrollTop) >= top - 110 - 66 && Math.ceil(b.scrollTop) <= top - 110 + 66  ) {
                this._chooseNav(i, false, speed)
                 break;
-            } 
+            } else if ( Math.ceil(d.scrollTop) >= top - 110 - 66 && Math.ceil(d.scrollTop) <= top - 110 + 66 ) {
+               this._chooseNav(i, false, speed)
+                break;
+            }
         }
         
     }
@@ -103,12 +109,15 @@ class Home extends Component {
 
     _chooseNav (index, isScroll = true, speed) {
         const {chooseNavIndex, scroll} = this.props
+       /* console.log(index, isScroll, speed, '_chooseNav')*/
         chooseNavIndex(index)
          if(isScroll) {
+            /*  console.log(index, isScroll, speed, 'isScroll')*/
              const scrollToJS = scroll.toJS()
              this._scroll(scrollToJS[index], isScroll, speed)
          }
          if(index === -1) {
+            /*   console.log(index, isScroll, speed, 'index')*/
              this._scroll(0, isScroll)
          }
     }
@@ -118,40 +127,51 @@ class Home extends Component {
           if(isScroll) return 
 
         if(!isAnimated) {
-          /*  console.log(isAnimated)*/
             setTimeout(() => {
-                document.body.scrollTop = 0
+                 document.documentElement.scrollTop = 0
+                 document.body.scrollTop = 0
             }, 0)
         }
         
 
         const timer = setInterval(() => {
-            const b = document.body
-        //     console.log(Math.ceil(b.scrollTop), top - 110)
+            const b =  document.body
+            const d =  document.documentElement
+          /*  console.log(Math.ceil(b.scrollTop), top - 110)
+            console.log(Math.ceil(d.scrollTop), top - 110)*/
            if(!this.state.isScroll)  {
-               /*console.log('isScroll: ' , isScroll)*/
                 this.setState({
                     isScroll: true
                 })
            }
            
-            if( b.scrollTop === 0 && top === 0) {
+            if( d.scrollTop === 0 && b.scrollTop === 0 && top === 0 || 
+                b.scrollTop === 0 && d.scrollTop === 0 && top === 0) {
                 this._chooseNav(0, false)
-                 
                  clearInterval(timer)
-                /*  console.log('isScroll: ' , isScroll)*/
                   this.setState({
                     isScroll: false
                 })
                
             }
-            else if( Math.ceil(b.scrollTop) > top - 110 ) {
+            else if( d.scrollTop === 0 && Math.ceil(b.scrollTop) > top - 110) {
                  b.scrollTop -= speed || 30
-            } 
-            else if( Math.ceil(b.scrollTop) >= top - 110 - 30 && Math.ceil(b.scrollTop) <= top - 110 + 30 ||
-              Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
+                 
+            } else if (b.scrollTop === 0 && Math.ceil(d.scrollTop) > top - 110) {
+                d.scrollTop -= speed || 30
+            }
+            else if(  d.scrollTop === 0 && Math.ceil(b.scrollTop) >= top - 110 - 30 && Math.ceil(b.scrollTop) <= top - 110 + 30 ||
+                     Math.ceil(b.scrollTop) + b.clientHeight >= b.scrollHeight - 10 ) {
                b.scrollTop = top - 110
-              /*  console.log('isScroll: ' , isScroll)*/
+               this.setState({
+                    isScroll: false
+                })
+                clearInterval(timer)
+                 
+            } 
+            else if( b.scrollTop === 0 && Math.ceil(d.scrollTop) >= top - 110 - 30 && Math.ceil(d.scrollTop) <= top - 110 + 30 ||
+                     Math.ceil(d.scrollTop) + d.clientHeight >= d.scrollHeight - 10 ) {
+               d.scrollTop = top - 110
                this.setState({
                     isScroll: false
                 })
@@ -159,11 +179,12 @@ class Home extends Component {
                  
             } 
             else {
-
                 b.scrollTop += speed || 30 
-                
+                d.scrollTop += speed || 30 
             }  
-             /* console.log(Math.ceil(b.scrollTop))*/
+
+              /* console.log(Math.ceil(d.scrollTop))*/
+           
         }, 1000 / 60)
        
     }

@@ -17,13 +17,13 @@ export default injectGlobal`
         box-sizing: border-box;
     }
     html {
-        height: 100vh;
-        overflow: auto;
+        height: 100%;
+        /*overflow: auto;*/
     }
     body {
-        overflow-y: auto;
+        /*overflow-y: auto;*/
         font-size: 14px;
-        height: 100vh;
+        height: 100%;
         line-height: 1.6;
         min-width: 320px;
         color: #2c3e50;
