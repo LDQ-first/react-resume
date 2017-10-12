@@ -73,7 +73,7 @@ const HeaderDiv = styled.div`
         }
         @media (max-width: 415px) {
             font-size: 1.2em;
-            width: 205px;
+            width: 200px;
         }
         .title {
             color: #EEE;
@@ -87,10 +87,10 @@ const HeaderDiv = styled.div`
             } 
         }
         .job {
-            color: #EEE;
-            /*@media (max-width: 415px) {
-                font-size: 1.1em;
-            }*/
+            color: #FFF;
+            @media (max-width: 415px) {
+                font-size: 1em;
+            }
         }
     }
 
