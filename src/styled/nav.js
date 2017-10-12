@@ -22,7 +22,9 @@ const NavDiv = styled.div`
             }
         }
        .navContent {
-           margin: 0 auto;
+           &.active {
+                background: transparent;
+            }
            .navs {
                .nav {
                     color: rgba(0, 0, 0, 0.5);
@@ -30,16 +32,21 @@ const NavDiv = styled.div`
                         color: #2196F3;
                     }
                 }
+                
                
            }
             @media (max-width: 768px) {    
-                   
                     .navs {
                         background: #FFF;
                         box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
                                     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
                                     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                        &.spread {
+                            background: #FFF;
+                            height: auto;
+                        }
                     }
+
             }
             
        }
@@ -50,9 +57,13 @@ const NavDiv = styled.div`
        display: flex;
        justify-content: space-between;
        padding: 8px 1em;
-       margin: 0.2em auto;
+       margin: 0 auto;
        transition: all 0.3s linear;
        position: relative;
+       left: 0;
+       &.active {
+             background: rgba(0, 0, 0, 0.2);
+        }
        .logo {
             padding: 4px 1em;
             font-size: 18px;
@@ -64,6 +75,7 @@ const NavDiv = styled.div`
             }
         }
         .navs {
+            transition: all 0.3s linear;
             display: flex;
             justify-content: flex-start;
             .nav {
@@ -100,9 +112,13 @@ const NavDiv = styled.div`
                 flex-direction: column;
                 width: 100%;
                 padding: 0.5em;
-                display: none;
+                height: 0;
+                opacity: 0;
                 &.spread {
-                    display: block;
+                    /*display: block;*/
+                    opacity: 1;
+                    background: rgba(0, 0, 0, 0.2);
+                    height: calc(100vh - 60%);
                 }
                 .nav {
                      padding: 1em;

@@ -149,7 +149,7 @@ export default class Nav extends Component {
        
         return (
             <NavDiv className={classNames({fixed})} >
-               <div className="navContent">
+               <div className={classNames("navContent", { fixed, active: isSpread})}>
                     <div className="logo">
                             <span className="name">刘德铨 </span> 
                             / <span className="cv">简历</span>

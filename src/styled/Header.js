@@ -17,17 +17,18 @@ const HeaderDiv = styled.div`
          position: relative;
          width: 100%;
          min-height: 100vh;
-         display: flex;
+         /*display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center;*/
     }
    .bgImg-list {
         position: absolute;
+        left: 0;
         height: 100vh;
         width: 100%;
         z-index: -200;
         display: flex;
-        justify-content: center;
+        /*justify-content: center;*/
         align-items: center;
         .imglist {
             animation: even 20s linear infinite alternate;
@@ -63,8 +64,16 @@ const HeaderDiv = styled.div`
     .headerContent {
         text-align: center;
         font-size: 1.5em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media (max-width: 768px) {
+           width: 254px;
+        }
         @media (max-width: 415px) {
             font-size: 1.2em;
+            width: 205px;
         }
         .title {
             color: #EEE;
@@ -79,6 +88,9 @@ const HeaderDiv = styled.div`
         }
         .job {
             color: #EEE;
+            /*@media (max-width: 415px) {
+                font-size: 1.1em;
+            }*/
         }
     }
 
