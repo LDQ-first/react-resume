@@ -4,9 +4,9 @@ const NavDiv = styled.div`
    position: absolute;
    top: 0;
    width: 100vw;
-   z-index: 1000;
    &.fixed {
-       position: fixed;
+       position: fixed;    
+       z-index: 1000;   
        top: 0;
        background: #FFF;
        box-shadow: 0px 2px 4px -1px rgba(122, 193, 249, 0.2),
@@ -22,6 +22,7 @@ const NavDiv = styled.div`
             }
         }
        .navContent {
+
            &.active {
                 background: transparent;
             }
@@ -44,6 +45,9 @@ const NavDiv = styled.div`
                         &.spread {
                             background: #FFF;
                             height: auto;
+                            .nav {
+                                 display: block;
+                            }
                         }
                     }
 
@@ -115,13 +119,16 @@ const NavDiv = styled.div`
                 height: 0;
                 opacity: 0;
                 &.spread {
-                    /*display: block;*/
                     opacity: 1;
                     background: rgba(0, 0, 0, 0.2);
                     height: calc(100vh - 60%);
+                    .nav {
+                         display: block;
+                    }
                 }
                 .nav {
                      padding: 1em;
+                     display: none;
                      &.active {
                         &::before {
                             background: transparent;
