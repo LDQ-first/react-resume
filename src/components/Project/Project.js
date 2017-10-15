@@ -205,23 +205,6 @@ export default class Project extends Component {
                         },
                     ]
                 },
-                {
-                    review: '//ldqblog.me/frame-Tic-Tac-Toe/',
-                    sourceCode: 'https://github.com/LDQ-first/frame-Tic-Tac-Toe',
-                    title: '使用ES5写的框架井字棋大战',
-                    img: '//ldqblog.me/work/img/All/05.jpg',
-                    content: [
-                        `ES5(原生JS)`,
-                        `实现选择作战框架，判定平局，胜败等功能`,
-                        `胜负的判定`
-                    ],
-                    icon: [
-                        { 
-                            link: `https://developer.mozilla.org/en-US/docs/Web/JavaScript`,
-                            className: `i-js`
-                        }
-                    ]
-                },
             ]
         }
     }
